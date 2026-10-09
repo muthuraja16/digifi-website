@@ -2,7 +2,7 @@
 
 - [x] Stage 0: Project setup, toolkit check, and CLAUDE.md
 - [x] Stage 1: design.md and design tokens
-- [ ] Stage 2: brief.md (page-by-page plan and content)
+- [x] Stage 2: brief.md (page-by-page plan and content)
 - [ ] Stage 3: Foundation, layout, and rendering strategy
 - [ ] Stage 4: Design system components and animation utilities
 - [ ] Stage 5: Homepage (premium)
@@ -52,3 +52,11 @@
 - Default Next.js page, styles and public SVGs removed; `src/app/icon.svg` (copy of the brand favicon) replaces the Next.js favicon until Stage 3. Placeholder home page reads from `src/content/site.ts`.
 - Context7 still not connected in this session; used the Next.js docs bundled in `node_modules/next/dist/docs/` and the next/font type definitions.
 - Gotcha: after changing `globals.css`, a `next build` reused a stale Turbopack cache and shipped the old CSS. If tokens look missing, delete `.next/` and rebuild.
+
+## Stage 2 notes (2026-10-09)
+
+- `docs/brief.md`: business summary, KPIs, audience, sitemap, every page (purpose, sections in order, question answered, CTAs, SEO, keyword), conversion paths, lead routing, SEO targets, full [TBD] / [confirm] list.
+- Content files in `src/content/`: site, services, industries, caseStudies, packages, faqs, quiz, about, home, plus `pages.ts` (SEO for every route and copy for Results, Industries, Growth Assessment, Contact, form labels and errors).
+- No invented numbers: case studies are `status: "placeholder"` with [TBD] figures; hero/sample report values are [TBD] and labelled "Sample report".
+- FAQs with a [confirm] marker have `confirmed: false` and stay hidden until confirmed.
+- **Review point:** read `docs/brief.md` §11 and the content files; edit wording now.
