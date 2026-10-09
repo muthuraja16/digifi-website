@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* docs/ contains example class names (including banned ones); never generate CSS from it. */
+@source not "../../docs";
+
 /*
  * DIGIFI design tokens. Source of truth: docs/design.md (from docs/design-dna.md).
  * Every token below is emitted as a CSS variable on :root and generates Tailwind classes.
@@ -43,6 +46,10 @@
 }
 
 :root {
+  /* Site shell */
+  --header-h: 72px;
+  --mobile-bar-h: 60px;
+
   --duration-micro: 150ms;
   --duration-ui: 250ms;
   --duration-reveal: 600ms;
@@ -54,6 +61,12 @@
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
+    scroll-padding-top: var(--header-h);
+  }
+
+  /* Lock page scroll while the mobile menu dialog is open. */
+  html:has(dialog[open]) {
+    overflow: hidden;
   }
 
   body {

@@ -78,6 +78,15 @@ export const site = {
 
   nav: {
     services: { label: "Services" },
+    labels: {
+      skipToContent: "Skip to content",
+      main: "Main",
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      mobileMenu: "Menu",
+      footer: "Footer",
+      social: "Social media",
+    },
     main: [
       { label: "Results", href: "/results" },
       { label: "Industries", href: "/industries" },
@@ -101,12 +110,14 @@ export const site = {
     blurb:
       "Digital marketing for local businesses in Dindigul, Madurai and Trichy. Clear plans, real enquiries and a monthly report you can actually read.",
     servicesHeading: "Services",
+    socialHeading: "Follow us",
     companyHeading: "Company",
     contactHeading: "Contact",
     copyright: "All rights reserved.",
   },
 
   notFound: {
+    eyebrow: "Error 404",
     title: "This page doesn't exist",
     body: "The link may be old or mistyped. Head back home, or book your free Growth Assessment while you're here.",
     homeLabel: "Back to home",

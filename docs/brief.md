@@ -252,6 +252,25 @@ Brand-styled, copy in `site.notFound`, links to Home and the assessment.
 
 ---
 
+## 7.12 Rendering strategy (Stage 3)
+
+Next.js 16 with Cache Components and Partial Prefetching (see `next.config.ts`).
+
+| Routes | Rendering | Notes |
+|---|---|---|
+| `/`, `/results`, `/industries`, `/growth-assessment`, `/about`, `/contact`, `/privacy-policy`, `/terms`, 404 | **Static (SSG)**, prerendered at build | All content comes from `src/content`; a deploy updates it |
+| `/services/[slug]`, `/lp/[slug]` | **Static (SSG)** for every slug in `generateStaticParams` | `instant = false` so unknown slugs return a real 404 status instead of a streamed soft 404 |
+| `/results` (later) | **ISR** only if case studies move to Supabase: cache the query with `"use cache"` + `cacheLife` | Not needed while case studies live in `caseStudies.ts` |
+| `/dashboard` | **Dynamic, noindex** | Static placeholder today; Stage 10's Supabase sign-in reads cookies, which makes it per-request |
+
+- Server components by default. Client components only where there is interaction: header scroll
+  state (`HeaderShell`), Services dropdown (`ServicesMenu`), mobile menu (`MobileMenu`), active nav
+  links (`NavLink`); later the quiz, forms and animations.
+- The footer copyright year is stamped at build time (`BUILD_YEAR` in `next.config.ts`): a request-time
+  `new Date()` would make every page dynamic. It updates on every deploy.
+- Every page starts with a dark section (`PageHero` or the home hero), because the header is
+  transparent over the top of the page until it scrolls.
+
 ## 8. Conversion paths
 
 **To the assessment form** (`/growth-assessment#assessment-form`):

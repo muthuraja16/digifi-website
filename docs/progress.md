@@ -3,7 +3,7 @@
 - [x] Stage 0: Project setup, toolkit check, and CLAUDE.md
 - [x] Stage 1: design.md and design tokens
 - [x] Stage 2: brief.md (page-by-page plan and content)
-- [ ] Stage 3: Foundation, layout, and rendering strategy
+- [x] Stage 3: Foundation, layout, and rendering strategy
 - [ ] Stage 4: Design system components and animation utilities
 - [ ] Stage 5: Homepage (premium)
 - [ ] Stage 6: Service pages, Results, Industries, About
@@ -66,3 +66,17 @@
 - DIGIFI supplied service sheets (Digital Growth Assessment™, Digital Foundation™, GBP, Meta Ads, WhatsApp). `packages.ts` rewritten with every plan, price and feature; Local Starter/Growth/Dominance dropped.
 - Decisions: free Growth Assessment stays the main CTA, ₹4,999 Digital Growth Assessment™ shown as the paid full audit; full plan prices shown; custom websites quote-only.
 - Resolved [confirm] items: ad budget, account ownership, timelines, no lock-in (GBP/WhatsApp monthly). Unverified claims from the sheets left out (listed in brief.md §12).
+
+## Stage 3 notes (2026-10-09)
+
+- Root layout: fonts, metadataBase https://www.digifi.in, lang="en", skip link, favicon set from `public/brand`, theme-color #0A1340. Header, `<main id="main">`, footer and mobile CTA bar live in the root layout, so 404 pages get them too.
+- Header: fixed, transparent at top and navy-900 once scrolled, blue scroll progress bar, reversed wordmark, Services dropdown (4 services), Results/Industries/About/Contact, "Free Growth Assessment" CTA (md+). Desktop nav from 1024px; hamburger below.
+- Mobile menu: native modal `<dialog>` (focus trap, Escape, inert page), 44px+ targets, CTAs at the bottom, closes on navigation and link tap, page scroll locked.
+- Mobile CTA bar below 768px: "Free Assessment" + "WhatsApp" (navy text, WhatsApp icon); hidden while the menu is open.
+- Footer: wordmark + tagline, blurb, services, company, contact, location, social links (visible [TBD]), legal links, © year.
+- Placeholder pages for every sitemap route use real hero copy from `src/content`; `/dashboard`, `/lp/*` and 404 are noindex. Custom brand 404.
+- Rendering strategy documented in `docs/brief.md` §7.12. Build: every route static.
+- Verified: every route 200 with header + footer and its own title; unknown service/lp slugs 404; dropdown (click, Escape, outside click); mobile menu (real Escape key, link navigation, focus inside, bar hidden); WhatsApp link https://wa.me/918892834327 with the default message; Next.js DevTools MCP: no errors.
+- Fixes found while testing: ButtonLink class clashes (header CTA showed on phones), Tailwind was generating classes from docs/ examples (now `@source not "../../docs"`), Cache Components warnings on dynamic routes (`instant = false`).
+- `lucide-react` installed now (planned for Stage 4) for the header icons. WhatsApp glyph is inline SVG (Simple Icons).
+- Screenshots weren't possible this session (browser pane not drawing while the app window is hidden); checks were done with scripted DOM tests. Please eyeball the header and menu at http://localhost:3000.

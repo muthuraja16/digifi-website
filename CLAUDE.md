@@ -64,6 +64,12 @@ and brief.md are created in Stages 1 and 2). Use only the design tokens. Follow 
 Key rules: blue-600 `#0064F8` for every CTA; WhatsApp green `#25D366` only on WhatsApp actions, with navy
 text; lime `#C6F432` for data only and never next to a WhatsApp button; no gradients except the single hero glow.
 
+Site shell rules (Stage 3):
+- Every page starts with a dark section (`PageHero` or the home hero): the fixed header is transparent at the top.
+- `ButtonLink` `className` is for layout only (width, margins). Tailwind resolves clashing utilities by
+  stylesheet order, not class order, so wrap the element instead of passing `hidden`/`flex`/padding.
+- Never call `new Date()`, `Math.random()` etc. during render: Cache Components fails the prerender.
+
 ## Content rule
 
 Never invent facts, numbers, results, testimonials, reviews, prices, team members or client logos.

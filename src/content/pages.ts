@@ -1,3 +1,5 @@
+import type { ServiceSlug } from "./services";
+
 // Per-page SEO and copy for pages that don't have their own content file.
 // Titles already include the "| DIGIFI" suffix (under 60 characters); descriptions are under 155.
 
@@ -100,7 +102,28 @@ export const seo = {
     keyword: "",
     noindex: true,
   },
+  notFound: {
+    path: "",
+    title: "Page not found | DIGIFI",
+    description: "This page doesn't exist.",
+    keyword: "",
+    noindex: true,
+  },
+  landingPage: {
+    path: "/lp",
+    title: "DIGIFI",
+    description: "",
+    keyword: "",
+    noindex: true,
+  },
 } satisfies Record<string, PageSeo>;
+
+export const serviceSeo: Record<ServiceSlug, PageSeo> = {
+  "meta-ads": seo.metaAds,
+  "google-business-profile": seo.googleBusinessProfile,
+  "whatsapp-marketing": seo.whatsappMarketing,
+  "website-design": seo.websiteDesign,
+};
 
 export const pages = {
   results: {
@@ -262,7 +285,14 @@ export const pages = {
   },
 
   legal: {
+    privacyPolicy: { headline: "Privacy policy" },
+    terms: { headline: "Terms of use" },
     lastUpdatedLabel: "Last updated",
     tocLabel: "On this page",
+  },
+
+  dashboard: {
+    headline: "Lead dashboard",
+    subheading: "Private area for the DIGIFI team.",
   },
 };
