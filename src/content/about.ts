@@ -74,7 +74,7 @@ export const about = {
       },
       {
         title: "Your accounts, your business",
-        body: "Everything we build for you stays yours. [confirm]",
+        body: "Everything we build for you stays yours. Every login is handed over to you.",
       },
     ],
   },

@@ -15,7 +15,20 @@ corridor. 3 years in business, 35+ clients served across 10+ industries, 15+ yea
 marketing experience.
 
 - **Services:** Meta Ads, Google Business Profile, WhatsApp Marketing, Website Design.
-- **Packages:** Local Starter, Local Growth, Local Dominance, shown as "Starting from ₹[TBD]/month".
+- **Plans and prices** (from DIGIFI's service sheets, October 2026; all in `src/content/packages.ts`):
+
+  | Offering | Plans |
+  |---|---|
+  | Free Growth Assessment | Free: quick review + call. The site's main CTA |
+  | Digital Growth Assessment™ | ₹4,999 one-time (starts from): full written audit, 9 areas, PDF, 30-day plan, 30-min call |
+  | Digital Foundation™ | ₹19,999 one-time (starts from): 6 platforms + one-page website, 5–7 business days |
+  | Meta Ads | Start ₹12,000/mo · Grow ₹20,000/mo · Dominate ₹30,000/mo; recommended ad budget ₹5,000+ / ₹10,000+ / ₹20,000+, paid directly to Meta |
+  | Google Business Profile | GBP Launch ₹6,000 one-time · Maps Growth System ₹5,000/mo (no lock-in) |
+  | WhatsApp | API Setup from ₹6,000 · Automation from ₹10,000 (one-time) · WhatsApp Marketing ₹5,000/mo (no lock-in) |
+  | Custom websites | Quote only |
+
+  The prompt pack's Local Starter / Local Growth / Local Dominance packages are **replaced** by these
+  plans (decision 9 October 2026). Full plan prices are shown on the site.
 - **USP:** local market expertise, Tamil-friendly communication, industry knowledge, AI-powered
   execution, transparent reporting.
 - **Contact:** phone and WhatsApp +91 88928 34327, hello@digifi.in. expo.digifi.in stays a separate site.
@@ -127,14 +140,15 @@ assessment or WhatsApp. Section order exactly as `docs/design.md` §10.
 | 4 | What's included | light | What | `included` | — |
 | 5 | Results for this service (matching case studies) | light | Results | `caseStudies` filtered by `services` | "See all results" |
 | 6 | Who it's for (industries) | light | Trust | `industries` (slugs) | Links to `/industries` |
-| 7 | Packages: "Starting from" for relevant packages | light | Next | `packages` (slugs), `packagesSection` | "Book a free Growth Assessment" |
+| 7 | Plans and prices for this service (plan cards, "Most popular" badge, ad budget note on Meta Ads) | light | Next | `plansFor(service.plans[i])`, `offerings` | Plan card: "Get started" → WhatsApp with the plan's message; band: "Book a free Growth Assessment" |
 | 8 | Service FAQs + general FAQs (confirmed only) | light | Trust | `serviceFaqs[slug]`, `faqs` | — |
 | 9 | Final CTA band | dark | Next | `home.finalCta` | Both CTAs |
 
 **Website Design adds:** portfolio (Vision Plywoods, Wave Power Tech in BrowserFrame, screenshots
 [TBD], links to the live sites [TBD URLs]) from `websitePortfolio`, the build process (= `process`),
 and "Get a website quote" → `/growth-assessment?service=website-design#assessment-form` (form preset
-to Website Design, form_type `website_quote`).
+to Website Design, form_type `website_quote`). Its plans section shows **Digital Foundation™** (₹19,999,
+includes a one-page website) plus a "Need a bigger website? Get a quote" card (`pricingLabels.customWebsite`).
 
 | Page | SEO title | Primary keyword | H1 draft | WhatsApp message |
 |---|---|---|---|---|
@@ -182,7 +196,8 @@ SEO: "Digital Marketing for Local Industries | DIGIFI". Keyword: *digital market
 | 3 | Digital Health Check quiz (`#health-check`): 6 questions, one per step, score 0–100, band + recommendations | Next | `quiz.ts` | Result → "Book a free Growth Assessment" (form prefilled with score) |
 | 4 | How it works: 3 steps | Trust | `steps` | — |
 | 5 | Assessment form (`#assessment-form`) + privacy line | Next | `form` | Submit |
-| 6 | Packages: "Starting from" | What | `packages`, `packagesSection` | — |
+| 6 | Paid option: Digital Growth Assessment™ (₹4,999, full written audit) | What | `pages.growthAssessment.paidAssessment`, `plansFor("digital-growth-assessment")` | "Get started" → WhatsApp |
+| 6b | Digital Foundation™ for businesses starting from zero | What | `plansFor("digital-foundation")` | "Get started" → WhatsApp |
 | 7 | FAQ (confirmed only) | Trust | `faqs` | — |
 | 8 | Success state (replaces the form): thank you, next steps, WhatsApp | Next | `success` | WhatsApp |
 
@@ -246,7 +261,7 @@ Brand-styled, copy in `site.notFound`, links to Home and the assessment.
 3. Final CTA band (every page)
 4. Sticky mobile bar "Free Assessment" (every page, below 768px)
 5. Homepage health check teaser → quiz → result → form prefilled with the score
-6. Packages section CTA (service pages, assessment page)
+6. Plans section band CTA (service pages, assessment page)
 7. Website Design "Get a website quote" → form preset to Website Design
 8. 404 page link
 9. Ad landing pages: their own short form (form_type `landing_page`)
@@ -262,6 +277,7 @@ Brand-styled, copy in `site.notFound`, links to Home and the assessment.
 7. Contact page channel
 8. Footer contact
 9. Form success panel ("Want to talk sooner?")
+10. Plan cards: "Get started" with a plan-specific message (service pages, assessment page)
 
 **To a call:** `tel:+918892834327` on Contact and in the footer.
 
@@ -295,7 +311,28 @@ location page each after launch (no doorway pages with swapped city names).
 
 ---
 
-## 11. Placeholders and items to confirm
+## 11. Free vs paid assessment
+
+Two offers with similar names, kept clearly apart in the copy:
+
+- **Free Growth Assessment** (main CTA everywhere): a quick review of the business online and a call
+  about first steps. Lead form on `/growth-assessment`.
+- **Digital Growth Assessment™** (₹4,999, paid): the full written audit. Shown as an upgrade section on
+  `/growth-assessment` and explained in the FAQ "How is the free assessment different…". Booked via WhatsApp.
+
+## 12. Claims from the service sheets left off the website
+
+These appear in DIGIFI's service sheets but are unverified statistics or guarantees, which the content
+rule forbids. Don't add them back without a source:
+
+- "98% open rate — highest of any marketing channel" (WhatsApp)
+- "Ban-proof" (WhatsApp API)
+- "Optimised to appear in Google's top 3" (GBP)
+- "Every rupee tracked", "Scale without limits", "Zero manual work"
+- "What separates DIGIFI from freelancers" (comparison with others)
+- Fixed broadcast times ("8–9 AM, 12:30 PM, 7–9 PM") — kept as "scheduled for when your customers read messages"
+
+## 13. Placeholders and items to confirm
 
 Every unknown in the content files is a visible `[TBD: ...]`; every drafted answer that needs
 Muthuraja's sign-off carries `[confirm]`. FAQs with `confirmed: false` are hidden on the site until
@@ -308,35 +345,31 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 | 1 | Case studies: 2–4 clients, challenge, what DIGIFI did, real result figures with periods, screenshots | `caseStudies.ts` | Stage 5 |
 | 2 | Hero report card and sample report numbers (real figures, or stays labelled "Sample report") | `home.ts` | Stage 5 |
 | 3 | Client logo permissions (names only until confirmed) | `industries.ts` | Stage 5 |
-| 4 | Package starting prices (₹/month) and what each package includes | `packages.ts` | Stage 6 |
-| 5 | Team members: names, roles, real photos; one line about the team | `about.ts` | Stage 6 |
-| 6 | Portfolio: Vision Plywoods and Wave Power Tech live URLs and screenshots | `services.ts` | Stage 6 |
-| 7 | Website Design: support period after launch | `services.ts` | Stage 6 |
-| 8 | Social media links (and which platforms DIGIFI actually uses) | `site.ts` | Stage 3 |
-| 9 | Registered business name | `site.ts` | Stage 7 |
-| 10 | Data retention period | privacy policy | Stage 7 |
-| 11 | Response time for follow-ups, e.g. "1 working day" | `pages.ts` (form intro, success panel) | Stage 9 |
-| 12 | Calling hours | `pages.ts` (contact) | Stage 9 |
-| 13 | New office street address and postal code | `site.ts` | Next month |
-| 14 | DIGIFI Google Business Profile | Reviews, map, JSON-LD | Next month |
+| 4 | Team members: names, roles, real photos; one line about the team | `about.ts` | Stage 6 |
+| 5 | Portfolio: Vision Plywoods and Wave Power Tech live URLs and screenshots | `services.ts` | Stage 6 |
+| 6 | Custom websites: support period after launch | `services.ts` | Stage 6 |
+| 7 | Social media links (and which platforms DIGIFI actually uses) | `site.ts` | Stage 3 |
+| 8 | Registered business name | `site.ts` | Stage 7 |
+| 9 | Data retention period | privacy policy | Stage 7 |
+| 10 | Response time for follow-ups, e.g. "1 working day" | `pages.ts` (form intro, success panel) | Stage 9 |
+| 11 | Calling hours | `pages.ts` (contact) | Stage 9 |
+| 12 | New office street address and postal code | `site.ts` | Next month |
+| 13 | DIGIFI Google Business Profile | Reviews, map, JSON-LD | Next month |
 
 ### [confirm]: drafted answers to approve
 
 | # | Item | Where |
 |---|---|---|
-| 1 | FAQ: minimum ad budget (and that ad spend is paid directly to Meta/Google) | `faqs.ts` |
-| 2 | FAQ: contract terms and notice period | `faqs.ts` |
-| 3 | FAQ: service area beyond Dindigul–Madurai–Trichy | `faqs.ts` |
-| 4 | FAQ: account ownership ("You do, always") | `faqs.ts`, `about.values` |
-| 5 | FAQ: keeping the current WhatsApp number | `faqs.ts` |
-| 6 | FAQ: typical website timeline | `faqs.ts` |
-| 7 | FAQ: how clients update their website | `faqs.ts` |
-| 8 | Packages: "best for" line for each package; ad spend paid separately | `packages.ts` |
-| 9 | About: founding story details (who founded DIGIFI and why) | `about.ts` |
-| 10 | Why DIGIFI: "changes happen in days, not weeks" (AI-powered turnaround) | `home.ts` |
-| 11 | Service pages: "what DIGIFI does" steps and "what's included" lists match what DIGIFI actually delivers (e.g. weekly ad optimisation, Meta Pixel setup, review request link, broadcasts) | `services.ts` |
-| 12 | Industry cards: "the challenge" and "how we help" text for each group | `industries.ts` |
-| 13 | Assessment "What you get": includes a look at competitors and a recommended package/budget | `pages.ts` |
+| 1 | FAQ: Meta Ads plan terms (lock-in? notice period?). GBP and WhatsApp monthly plans are already "no lock-in" | `faqs.ts` |
+| 2 | FAQ: service area beyond Dindigul–Madurai–Trichy | `faqs.ts` |
+| 3 | FAQ: keeping the current number when moving to the WhatsApp Business API | `faqs.ts` |
+| 4 | FAQ: how clients update their website | `faqs.ts` |
+| 5 | About: founding story details (who founded DIGIFI and why) | `about.ts` |
+| 6 | Why DIGIFI: "changes happen in days, not weeks" (AI-powered turnaround) | `home.ts` |
+| 7 | Website Design page: custom website process and "what's included" list (drafted; plans for GBP, Meta Ads and WhatsApp now come from DIGIFI's sheets) | `services.ts` |
+| 8 | Industry cards: "the challenge" and "how we help" text for each group | `industries.ts` |
+| 9 | Plan copy: the plan features are DIGIFI's sheets rewritten in plain English (e.g. "Hook → Offer → CTA" became "hook, offer, call to action"). Check nothing lost its meaning | `packages.ts` |
 
-Items 11–13 have no inline marker: they are drafted service descriptions, not facts. Read them and
-change anything that doesn't match how DIGIFI works.
+Resolved by the service sheets (9 October 2026): minimum ad budget (₹5,000+/month, paid to Meta),
+account ownership ("You own everything"), package prices and contents, Digital Foundation and
+assessment timelines (5–7 business days), "no lock-in" on monthly GBP and WhatsApp plans.

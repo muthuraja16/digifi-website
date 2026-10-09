@@ -24,14 +24,14 @@ export const faqs: Faq[] = [
     id: "ad-budget",
     question: "What ad budget do I need?",
     answer:
-      "[confirm: minimum monthly ad budget] We'll recommend a budget that fits your goals and your area. Ad spend is paid directly to Meta or Google, separate from our fee.",
-    confirmed: false,
+      "For Meta Ads we recommend starting with at least ₹5,000 a month in ad budget, and more as you grow. Your ad budget is paid directly to Meta, separate from our plan fee, so all of it goes into your ads. We never take a cut of it.",
+    confirmed: true,
   },
   {
     id: "contract",
     question: "Do I have to sign a long contract?",
     answer:
-      "[confirm: contract terms, e.g. monthly or minimum period, and notice to cancel]",
+      "No. Our monthly Google Business Profile and WhatsApp Marketing plans have no lock-in, so you can cancel anytime. Setup services are one-time payments with no monthly fee. [confirm: Meta Ads plan terms and notice period]",
     confirmed: false,
   },
   {
@@ -66,15 +66,23 @@ export const faqs: Faq[] = [
     id: "assessment",
     question: "What happens in the free Growth Assessment?",
     answer:
-      "We look at how your business shows up online today: your Google profile, social media, ads, WhatsApp and website. Then we talk you through what's working, what's missing and the first steps we'd take. It's free, with no obligation.",
+      "We take a quick look at how your business shows up online today: your Google profile, social media, ads, WhatsApp and website. Then we talk you through what's working, what's missing and the first steps we'd take. It's free, with no obligation.",
+    confirmed: true,
+  },
+  {
+    id: "free-vs-paid-assessment",
+    question:
+      "How is the free assessment different from the ₹4,999 Digital Growth Assessment™?",
+    answer:
+      "The free Growth Assessment is a quick review and a conversation about your first steps. The Digital Growth Assessment™ is a full written audit: 9 areas, up to 3 competitors compared, a score out of 100, a PDF report, a 30-day action plan and a 30-minute review call, delivered in 5–7 business days.",
     confirmed: true,
   },
   {
     id: "account-ownership",
     question: "Who owns my ad account and page?",
     answer:
-      "[confirm: recommended answer] You do, always. Your ad accounts, pages and Google profile stay in your name, and we work on them with access you give us.",
-    confirmed: false,
+      "You do, always. Your pages, profiles and accounts stay in your name, and every login is handed over to you securely.",
+    confirmed: true,
   },
 ];
 
@@ -117,7 +125,7 @@ export const serviceFaqs: Record<ServiceSlug, Faq[]> = {
       id: "whatsapp-number",
       question: "Can I keep my current WhatsApp number?",
       answer:
-        "Usually, yes. We'll check your current setup in the assessment and recommend the simplest option. [confirm]",
+        "Usually, yes. We'll check your current setup in the assessment and recommend the simplest option. [confirm: number migration to the WhatsApp Business API]",
       confirmed: false,
     },
     {
@@ -133,8 +141,8 @@ export const serviceFaqs: Record<ServiceSlug, Faq[]> = {
       id: "website-timeline",
       question: "How long does a website take?",
       answer:
-        "[confirm: typical timeline] It depends on the number of pages and how quickly content is ready.",
-      confirmed: false,
+        "The one-page website in our Digital Foundation™ package is ready in 5–7 business days, along with all your profiles. Bigger websites depend on the number of pages and how quickly content is ready; we'll give you a timeline with your quote.",
+      confirmed: true,
     },
     {
       id: "website-edit",

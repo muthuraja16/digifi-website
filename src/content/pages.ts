@@ -146,10 +146,10 @@ export const pages = {
     whatYouGet: {
       heading: "What you get",
       items: [
-        "A review of how your business shows up on Google, Facebook, Instagram and your website",
-        "What's working, what's missing, and what your competitors are doing",
-        "A short, practical plan with the first steps we'd take",
-        "A recommended package and budget, if you want our help",
+        "A quick look at how your business shows up on Google, Facebook, Instagram, WhatsApp and your website",
+        "A conversation about what's working and what's missing",
+        "Honest advice on the first steps we'd take",
+        "A recommended plan and budget, if you want our help",
       ],
     },
     steps: {
@@ -168,6 +168,12 @@ export const pages = {
           body: "On a call or WhatsApp, in Tamil or English, at a time that suits you.",
         },
       ],
+    },
+    paidAssessment: {
+      eyebrow: "Want the full picture?",
+      heading: "Digital Growth Assessment™: the full written audit",
+      body: "If you'd like everything in writing, our paid audit reviews 9 areas of your business online, compares you with up to 3 local competitors, and gives you a score, a PDF report, a 30-day action plan and a 30-minute review call.",
+      // Price and details: plans "digital-growth-assessment" in packages.ts.
     },
     form: {
       id: "assessment-form",

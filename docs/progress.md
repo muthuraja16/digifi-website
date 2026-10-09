@@ -60,3 +60,9 @@
 - No invented numbers: case studies are `status: "placeholder"` with [TBD] figures; hero/sample report values are [TBD] and labelled "Sample report".
 - FAQs with a [confirm] marker have `confirmed: false` and stay hidden until confirmed.
 - **Review point:** read `docs/brief.md` §11 and the content files; edit wording now.
+
+### Stage 2 update: real plans and prices (2026-10-09)
+
+- DIGIFI supplied service sheets (Digital Growth Assessment™, Digital Foundation™, GBP, Meta Ads, WhatsApp). `packages.ts` rewritten with every plan, price and feature; Local Starter/Growth/Dominance dropped.
+- Decisions: free Growth Assessment stays the main CTA, ₹4,999 Digital Growth Assessment™ shown as the paid full audit; full plan prices shown; custom websites quote-only.
+- Resolved [confirm] items: ad budget, account ownership, timelines, no lock-in (GBP/WhatsApp monthly). Unverified claims from the sheets left out (listed in brief.md §12).

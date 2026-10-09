@@ -1,5 +1,5 @@
 import type { IndustrySlug } from "./industries";
-import type { PackageSlug } from "./packages";
+import type { OfferingSlug } from "./packages";
 
 export type ServiceSlug =
   | "meta-ads"
@@ -24,10 +24,11 @@ export type Service = {
   hero: { eyebrow: string; headline: string; subheading: string };
   problem: { heading: string; points: string[] };
   process: { heading: string; steps: ProcessStep[] };
-  /** Drafted from the service scope; confirm it matches what DIGIFI delivers. */
+  /** Short summary of what the service covers; full detail lives in the plans (packages.ts). */
   included: string[];
   industries: IndustrySlug[];
-  packages: PackageSlug[];
+  /** Plan groups shown on this page, in order (packages.ts). */
+  plans: OfferingSlug[];
   /** Pre-filled WhatsApp message for this page. */
   whatsappMessage: string;
   /** Optional extra CTA (Website Design: "Get a website quote"). */
@@ -100,7 +101,7 @@ export const services: Service[] = [
       "retail-lifestyle",
       "automotive-ev",
     ],
-    packages: ["local-starter", "local-growth", "local-dominance"],
+    plans: ["meta-ads"],
     whatsappMessage: "Hi DIGIFI, I'm interested in Meta Ads for my business.",
   },
   {
@@ -145,7 +146,7 @@ export const services: Service[] = [
         },
         {
           title: "Keep it active",
-          body: "Regular posts and offers, answers to questions, and timely replies to every review.",
+          body: "Regular posts and offers, answers to customer questions, and guidance on replying to every review.",
         },
         {
           title: "Grow your reviews",
@@ -154,12 +155,12 @@ export const services: Service[] = [
       ],
     },
     included: [
-      "Profile audit, setup or verification help",
-      "Categories, services and description written for local search",
-      "Photo uploads and regular posts",
-      "Review reply management",
-      "Review request link and message",
-      "Monthly report: searches, calls, direction requests",
+      "Profile creation, claiming and verification support",
+      "Categories, services and description researched for local search",
+      "Photos, posts and questions kept up to date",
+      "Review link, QR code, request message and reply guidance",
+      "Monthly competitor comparison and ranking tracking",
+      "Monthly report: views, calls, website clicks, direction requests",
     ],
     industries: [
       "retail-lifestyle",
@@ -167,7 +168,7 @@ export const services: Service[] = [
       "education-coaching",
       "automotive-ev",
     ],
-    packages: ["local-starter", "local-growth", "local-dominance"],
+    plans: ["google-business-profile"],
     whatsappMessage:
       "Hi DIGIFI, I'd like help with my Google Business Profile.",
   },
@@ -179,8 +180,8 @@ export const services: Service[] = [
     outcome:
       "Reply fast, follow up properly and turn more enquiries into customers.",
     bullets: [
-      "WhatsApp Business set up with catalogue and quick replies",
-      "Follow-up messages so no enquiry goes cold",
+      "Official WhatsApp Business API, set up properly",
+      "Instant automatic replies so no enquiry goes cold",
       "Offers and updates to customers who already know you",
     ],
     journey: {
@@ -205,12 +206,12 @@ export const services: Service[] = [
       heading: "How we set up WhatsApp to sell",
       steps: [
         {
-          title: "Set up WhatsApp Business properly",
-          body: "Business profile, catalogue, labels, greeting and away messages, and quick replies for common questions.",
+          title: "Set up the official WhatsApp Business API",
+          body: "Business profile, catalogue, greeting and away messages, quick replies, and access for up to 3 team members.",
         },
         {
-          title: "Build your follow-up flow",
-          body: "Simple message templates for first reply, follow-up and reminder, so your team knows exactly what to send.",
+          title: "Automate replies and follow-up",
+          body: "Instant welcome messages, answers to common questions, lead capture and appointment booking, even after hours.",
         },
         {
           title: "Connect it to your ads",
@@ -223,12 +224,12 @@ export const services: Service[] = [
       ],
     },
     included: [
-      "WhatsApp Business setup and profile",
-      "Catalogue, labels and quick replies",
-      "Follow-up message templates",
-      "Click-to-WhatsApp ad connection",
-      "Broadcast messages to opted-in customers",
-      "Monthly report on chats and follow-ups",
+      "Official WhatsApp Business API setup and business profile",
+      "Approved message templates and product catalogue",
+      "Automatic replies, lead capture and appointment booking",
+      "Click-to-WhatsApp links and QR codes for ads, website and print",
+      "Monthly broadcasts and festival campaigns in Tamil and English",
+      "Monthly report: delivery, read and reply rates",
     ],
     industries: [
       "education-coaching",
@@ -237,7 +238,7 @@ export const services: Service[] = [
       "local-services",
       "automotive-ev",
     ],
-    packages: ["local-growth", "local-dominance"],
+    plans: ["whatsapp-marketing"],
     whatsappMessage:
       "Hi DIGIFI, I'd like to know more about WhatsApp marketing for my business.",
   },
@@ -305,7 +306,7 @@ export const services: Service[] = [
       "construction-real-estate",
       "retail-lifestyle",
     ],
-    packages: ["local-growth", "local-dominance"],
+    plans: ["digital-foundation"],
     whatsappMessage: "Hi DIGIFI, I'd like a quote for a new website.",
     extraCta: {
       label: "Get a website quote",
