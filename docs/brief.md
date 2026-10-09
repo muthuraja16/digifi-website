@@ -361,8 +361,6 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 | # | Item | Where |
 |---|---|---|
 | 1 | FAQ: Meta Ads plan terms (lock-in? notice period?). GBP and WhatsApp monthly plans are already "no lock-in" | `faqs.ts` |
-| 2 | FAQ: service area beyond Dindigul–Madurai–Trichy | `faqs.ts` |
-| 3 | FAQ: keeping the current number when moving to the WhatsApp Business API | `faqs.ts` |
 | 4 | FAQ: how clients update their website | `faqs.ts` |
 | 5 | About: founding story details (who founded DIGIFI and why) | `about.ts` |
 | 6 | Why DIGIFI: "changes happen in days, not weeks" (AI-powered turnaround) | `home.ts` |
@@ -373,3 +371,5 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 Resolved by the service sheets (9 October 2026): minimum ad budget (₹5,000+/month, paid to Meta),
 account ownership ("You own everything"), package prices and contents, Digital Foundation and
 assessment timelines (5–7 business days), "no lock-in" on monthly GBP and WhatsApp plans.
+Resolved by Muthuraja (9 October 2026): service area has no restriction (Dindigul–Madurai–Trichy
+stays the focus in copy and SEO); clients keep their current WhatsApp Business number on the API.

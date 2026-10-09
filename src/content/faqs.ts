@@ -59,8 +59,8 @@ export const faqs: Faq[] = [
     id: "outside-dindigul",
     question: "Do you work outside Dindigul?",
     answer:
-      "[confirm: service area] We work with businesses across the Dindigul, Madurai and Trichy corridor.",
-    confirmed: false,
+      "Yes. We're based in Dindigul and work closely with businesses across Dindigul, Madurai and Trichy, but there's no restriction on where you are. We work with clients anywhere over WhatsApp, phone and video calls.",
+    confirmed: true,
   },
   {
     id: "assessment",
@@ -125,8 +125,8 @@ export const serviceFaqs: Record<ServiceSlug, Faq[]> = {
       id: "whatsapp-number",
       question: "Can I keep my current WhatsApp number?",
       answer:
-        "Usually, yes. We'll check your current setup in the assessment and recommend the simplest option. [confirm: number migration to the WhatsApp Business API]",
-      confirmed: false,
+        "Yes. You can keep your current WhatsApp Business number when we move you to the WhatsApp Business API.",
+      confirmed: true,
     },
     {
       id: "whatsapp-spam",
