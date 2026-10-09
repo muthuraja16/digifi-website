@@ -1,7 +1,7 @@
 # DIGIFI website: build progress
 
 - [x] Stage 0: Project setup, toolkit check, and CLAUDE.md
-- [ ] Stage 1: design.md and design tokens
+- [x] Stage 1: design.md and design tokens
 - [ ] Stage 2: brief.md (page-by-page plan and content)
 - [ ] Stage 3: Foundation, layout, and rendering strategy
 - [ ] Stage 4: Design system components and animation utilities
@@ -41,3 +41,14 @@
 | supabase, resend, vercel, sentry MCP | added, **need authentication** before Stages 8, 9, 18, 19 |
 | webapp-testing skill | **missing** — Stages 6/10/17 will use the Playwright plugin instead |
 | context-engineering plugin (not in the pack) | fails to load (manifest conflict); unrelated, ignored |
+
+## Stage 1 notes (2026-10-09)
+
+- `docs/design.md` written from the Design DNA (all sections + "How to apply").
+- Tokens in `src/app/globals.css` via Tailwind 4 `@theme`: 18 color tokens as `--color-*` CSS variables and classes; Tailwind's default palette disabled (`--color-*: initial`), so `bg-blue-500` etc. don't exist. Radius (`rounded-card`, `rounded-inner`), shadows (`shadow-card`, `shadow-hover`), easing (`ease-out`, `ease-in-out`), duration/stagger CSS variables.
+- Utilities: `container-site`, `grid-site`, `section-y`, `type-display`, `type-h2`, `type-h3`, `type-body-lg`, `eyebrow`, `metric`, `metric-sm`.
+- Color class names: DNA tokens `text-body` / `text-muted` / `text-on-dark` are `--color-body` / `--color-muted` / `--color-on-dark` so the classes read `text-body`, not `text-text-body`.
+- Fonts: Bricolage Grotesque variable (400–800 + `opsz` axis) and Geist Mono 500 via next/font, `display: swap`, exposed as `--font-sans` / `--font-mono`. Measured CLS on the page: 0.
+- Default Next.js page, styles and public SVGs removed; `src/app/icon.svg` (copy of the brand favicon) replaces the Next.js favicon until Stage 3. Placeholder home page reads from `src/content/site.ts`.
+- Context7 still not connected in this session; used the Next.js docs bundled in `node_modules/next/dist/docs/` and the next/font type definitions.
+- Gotcha: after changing `globals.css`, a `next build` reused a stale Turbopack cache and shipped the old CSS. If tokens look missing, delete `.next/` and rebuild.
