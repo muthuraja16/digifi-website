@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Geist_Mono } from "next/font/google";
+import { MotionProvider } from "@/components/motion/MotionProvider";
 import { MobileCtaBar } from "@/components/sections/MobileCtaBar";
 import { SiteFooter } from "@/components/sections/SiteFooter";
 import { SiteHeader } from "@/components/sections/SiteHeader";
@@ -50,12 +51,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         >
           {site.nav.labels.skipToContent}
         </a>
-        <SiteHeader />
-        <main id="main" tabIndex={-1} className="outline-none">
-          {children}
-        </main>
-        <SiteFooter />
-        <MobileCtaBar />
+        <MotionProvider>
+          <SiteHeader />
+          <main id="main" tabIndex={-1} className="outline-none">
+            {children}
+          </main>
+          <SiteFooter />
+          <MobileCtaBar />
+        </MotionProvider>
       </body>
     </html>
   );

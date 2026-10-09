@@ -4,7 +4,7 @@
 - [x] Stage 1: design.md and design tokens
 - [x] Stage 2: brief.md (page-by-page plan and content)
 - [x] Stage 3: Foundation, layout, and rendering strategy
-- [ ] Stage 4: Design system components and animation utilities
+- [x] Stage 4: Design system components and animation utilities
 - [ ] Stage 5: Homepage (premium)
 - [ ] Stage 6: Service pages, Results, Industries, About
 - [ ] Stage 7: Trust pages and trust elements
@@ -80,3 +80,15 @@
 - Fixes found while testing: ButtonLink class clashes (header CTA showed on phones), Tailwind was generating classes from docs/ examples (now `@source not "../../docs"`), Cache Components warnings on dynamic routes (`instant = false`).
 - `lucide-react` installed now (planned for Stage 4) for the header icons. WhatsApp glyph is inline SVG (Simple Icons).
 - Screenshots weren't possible this session (browser pane not drawing while the app window is hidden); checks were done with scripted DOM tests. Please eyeball the header and menu at http://localhost:3000.
+
+## Stage 4 notes (2026-10-10)
+
+- Installed gsap 3.15.0, @gsap/react 2.1.2, motion 14.0.0 (lucide-react was added in Stage 3).
+- Components in `src/components/ui`: Button (replaces Stage 3 ButtonLink), Card, BentoGrid/BentoCard, SectionHeading, Eyebrow, IconTile, MetricNumber, MetricBadge, RisingDots, Accordion, Tabs, FormField/Input/Textarea/Select/Checkbox/RadioGroup, BrowserFrame, Badge, Chip/ChipButton. Inventory in `docs/design.md` §12.
+- Dark context via an `on-dark` class + `on-dark:` Tailwind variant instead of per-component dark props.
+- Motion utilities in `src/components/motion`: gsap.ts (ScrollTrigger, useGSAP, CustomEase registered once; design-token eases), Reveal, StaggerGroup, CountUp, DrawLine, HoverLift, variants.ts, MotionProvider (LazyMotion + reducedMotion="user") in the root layout.
+- /styleguide: every token, type style, component (light + dark) and animation; noindex. Must be excluded from sitemap/robots in Stage 13.
+- Verified in Chrome (DevTools MCP): CountUp ticks to final, DrawLine draws, accordion/tabs keyboard, all 72 interactive elements show the 2px blue-600 focus ring, 44px targets, no console errors. Reduced motion (matchMedia emulated): counters final immediately, charts fully drawn, no reveal styles, no hover lift.
+- web-design-guidelines review: fixed overscroll-contain on the mobile menu, touch-action/tap highlight, scroll-padding-bottom for the mobile bar, min-w-0 on truncated URL, color-scheme on dark form controls, focus ring colour fading in (outline colour now always blue-600). Not changed on purpose: Title Case (brief uses sentence case), URL state for tabs/accordion.
+- Open for Stage 9: form submit must focus the first error and announce errors (aria-live).
+- Open question for Muthuraja: add an error colour token? (none in the Design DNA; errors currently use icon + bold text + heavier border.)

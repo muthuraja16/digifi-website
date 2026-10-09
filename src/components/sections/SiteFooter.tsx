@@ -12,7 +12,7 @@ const link =
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy-950 text-on-dark">
+    <footer className="on-dark bg-navy-950 text-on-dark">
       <div className="container-site grid-site gap-y-10 py-16 md:py-20">
         <div className="col-span-12 lg:col-span-4">
           <Link href="/" className="inline-flex rounded-inner">

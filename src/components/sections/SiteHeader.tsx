@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/content/services";
 import { site, whatsappHref } from "@/content/site";
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { HeaderShell } from "./HeaderShell";
 import { MobileMenu } from "./MobileMenu";
@@ -78,9 +78,9 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <div className="hidden md:block">
-            <ButtonLink variant="primary" href={ctas.primaryHref}>
+            <Button variant="primary" href={ctas.primaryHref}>
               {ctas.primaryShort}
-            </ButtonLink>
+            </Button>
           </div>
           <MobileMenu
             openLabel={nav.labels.openMenu}
@@ -115,20 +115,20 @@ export function SiteHeader() {
               </ul>
             </nav>
             <div className="container-site grid shrink-0 gap-3 pt-4 pb-[max(24px,env(safe-area-inset-bottom))]">
-              <ButtonLink
+              <Button
                 variant="primary"
                 href={ctas.primaryHref}
                 className="w-full"
               >
                 {ctas.primary}
-              </ButtonLink>
-              <ButtonLink
+              </Button>
+              <Button
                 variant="whatsapp"
                 href={whatsappHref()}
                 className="w-full"
               >
                 {ctas.whatsapp}
-              </ButtonLink>
+              </Button>
             </div>
           </MobileMenu>
         </div>

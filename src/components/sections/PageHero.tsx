@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { site, whatsappHref } from "@/content/site";
-import { ButtonLink } from "@/components/ui/ButtonLink";
+import { Button } from "@/components/ui/Button";
 
 type PageHeroProps = {
   eyebrow?: string;
@@ -23,7 +23,7 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="bg-navy-950 pt-[calc(var(--header-h)+48px)] pb-16 md:pt-[calc(var(--header-h)+96px)] md:pb-28">
+    <section className="on-dark bg-navy-950 pt-[calc(var(--header-h)+48px)] pb-16 md:pt-[calc(var(--header-h)+96px)] md:pb-28">
       <div className="container-site">
         {eyebrow ? <p className="eyebrow text-sky-300">{eyebrow}</p> : null}
         <h1 className="mt-4 max-w-[18ch] type-display text-white">
@@ -36,12 +36,12 @@ export function PageHero({
         ) : null}
         {whatsappMessage ? (
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink variant="primary" href={site.ctas.primaryHref}>
+            <Button variant="primary" href={site.ctas.primaryHref} arrow>
               {site.ctas.primary}
-            </ButtonLink>
-            <ButtonLink variant="whatsapp" href={whatsappHref(whatsappMessage)}>
+            </Button>
+            <Button variant="whatsapp" href={whatsappHref(whatsappMessage)}>
               {site.ctas.whatsapp}
-            </ButtonLink>
+            </Button>
           </div>
         ) : null}
         {children}

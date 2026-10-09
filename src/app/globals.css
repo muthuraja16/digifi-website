@@ -4,6 +4,12 @@
 @source not "../../docs";
 
 /*
+ * Dark section context. Put `on-dark` on any navy section; components inside switch to their
+ * dark styles with the `on-dark:` variant, so no component needs a "dark" prop.
+ */
+@custom-variant on-dark (&:where(.on-dark, .on-dark *));
+
+/*
  * DIGIFI design tokens. Source of truth: docs/design.md (from docs/design-dna.md).
  * Every token below is emitted as a CSS variable on :root and generates Tailwind classes.
  */
@@ -62,6 +68,22 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-padding-top: var(--header-h);
+    /* Keep focused/anchored elements clear of the sticky mobile CTA bar. */
+    scroll-padding-bottom: var(--mobile-bar-h);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (min-width: 48rem) {
+    html {
+      scroll-padding-bottom: 0;
+    }
+  }
+
+  a,
+  button,
+  label,
+  summary {
+    touch-action: manipulation;
   }
 
   /* Lock page scroll while the mobile menu dialog is open. */
@@ -86,6 +108,14 @@
     color: var(--color-navy-900);
     line-height: 1.1;
     text-wrap: balance;
+  }
+
+  /* Outline colour is always blue-600, so focus only switches the ring on: colour transitions
+     (transition-colors includes outline-color) can't fade it in from the text colour. */
+  *,
+  ::before,
+  ::after {
+    outline-color: var(--color-blue-600);
   }
 
   :focus-visible {

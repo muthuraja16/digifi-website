@@ -48,7 +48,7 @@ export function MobileMenu({
           if ((e.target as HTMLElement).closest("a"))
             dialogRef.current?.close();
         }}
-        className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none flex-col overflow-y-auto bg-navy-950 p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-[250ms] ease-out backdrop:bg-navy-950 open:flex open:opacity-100 lg:hidden starting:open:opacity-0"
+        className="fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none flex-col overflow-y-auto overscroll-contain bg-navy-950 p-0 text-white opacity-0 transition-[opacity,display,overlay] transition-discrete duration-[250ms] ease-out backdrop:bg-navy-950 open:flex open:opacity-100 lg:hidden starting:open:opacity-0"
       >
         <button
           type="button"

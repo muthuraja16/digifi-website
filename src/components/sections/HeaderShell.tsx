@@ -37,7 +37,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
   return (
     <header
       data-scrolled={scrolled || undefined}
-      className="fixed inset-x-0 top-0 z-40 transition-colors duration-[250ms] ease-out data-scrolled:bg-navy-900"
+      className="on-dark fixed inset-x-0 top-0 z-40 transition-colors duration-[250ms] ease-out data-scrolled:bg-navy-900"
     >
       <div
         ref={barRef}

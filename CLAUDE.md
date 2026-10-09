@@ -70,6 +70,13 @@ Site shell rules (Stage 3):
   stylesheet order, not class order, so wrap the element instead of passing `hidden`/`flex`/padding.
 - Never call `new Date()`, `Math.random()` etc. during render: Cache Components fails the prerender.
 
+Component rules (Stage 4, details in docs/design.md §12):
+- Reuse `src/components/ui` and `src/components/motion`; check /styleguide before building anything new.
+- Dark sections get the `on-dark` class; components adapt via the `on-dark:` variant (no dark props).
+- Import GSAP only from `@/components/motion/gsap`. Use Motion's `m.*` components (LazyMotion), not `motion.*`.
+- GSAP and Motion never animate the same element; every animation has a reduced-motion final state.
+- If Tailwind changes don't show up (dev or build), delete `.next/` and restart: Turbopack can serve stale CSS.
+
 ## Content rule
 
 Never invent facts, numbers, results, testimonials, reviews, prices, team members or client logos.

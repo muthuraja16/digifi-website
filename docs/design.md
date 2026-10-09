@@ -278,3 +278,50 @@ Numbers use tabular figures so counters don't jitter.
 - ✗ Arbitrary hex values in class names (`bg-[#3B82F6]`). Add a token to this file and `globals.css`
   first, or don't use the color.
 - ✗ Numbers in Bricolage Grotesque, or an invented number to fill a layout.
+
+---
+
+## 12. Components and motion utilities (Stage 4)
+
+Live reference: **/styleguide** (noindex). Every component works in light and dark sections.
+
+**Dark context:** put the class `on-dark` on any navy section. Components inside switch to their dark
+styles through the `on-dark:` Tailwind variant (defined in `globals.css`), so no component takes a
+`dark` prop. The header, footer, mobile bar and `PageHero` already set it.
+
+| Component | File | Notes |
+|---|---|---|
+| Button | `ui/Button.tsx` | `variant`: primary (fill sweep), whatsapp (navy text + icon), secondary (outline), ghost. `size`: sm, md, lg (all ≥44px). `arrow` adds the nudging arrow. `loading`, `disabled`. Renders `<Link>`/`<a>` with `href`, else `<button>`. External http links open in a new tab |
+| Card | `ui/Card.tsx` | 20px radius; navy-800 with hairline border on dark |
+| BentoGrid, BentoCard | `ui/BentoGrid.tsx` | 12-col grid; `span` sm/md/lg/full, `rows` 1/2; card has hover lift |
+| SectionHeading, Eyebrow | `ui/SectionHeading.tsx`, `ui/Eyebrow.tsx` | Eyebrow + H2 (or H1) + intro |
+| IconTile, Icon | `ui/IconTile.tsx`, `ui/Icon.tsx` | Register any new Lucide icon in `Icon.tsx` |
+| MetricNumber, MetricBadge | `ui/Metric.tsx` | Badge: lime-50/navy on light, lime-400/navy on dark; `trend` up/down |
+| RisingDots | `ui/RisingDots.tsx` | `variant` bullet, steps (`active` 0–3), divider |
+| Accordion | `ui/Accordion.tsx` | Answers stay in the HTML when closed (crawlable); Motion fade on open |
+| Tabs | `ui/Tabs.tsx` | Arrow keys, Home/End |
+| FormField, Input, Textarea, Select, Checkbox, RadioGroup | `ui/Form.tsx` | FormField wires label, hint and error ids into its control. `Input leading="+91"` |
+| BrowserFrame | `ui/BrowserFrame.tsx` | Portfolio screenshots (`next/image` with `fill` inside) |
+| Badge, Chip, ChipButton | `ui/Badge.tsx`, `ui/Chip.tsx` | ChipButton uses `aria-pressed` for filters |
+
+**Form errors:** the token list has no red. Errors are shown with an icon, bold navy (white on dark)
+text and a 2px navy border, never by colour alone. If a dedicated error colour is wanted, add it to the
+token list first.
+
+**Motion utilities** (`src/components/motion/`):
+
+| Utility | Library | Use |
+|---|---|---|
+| `gsap.ts` | GSAP | The only place GSAP is imported; registers ScrollTrigger, useGSAP and the DIGIFI eases once |
+| Reveal | GSAP | Fade + 24px rise once in view. Below the fold only |
+| StaggerGroup | GSAP | Children reveal 80ms apart; give it the grid classes |
+| CountUp | GSAP | 0 → value over 1.4s once in view; server-rendered final value |
+| DrawLine | GSAP | Draws every `[data-draw]` stroke inside over 1.2s; bars are thick stroked lines |
+| HoverLift | Motion | 2px lift + tap press; gives `<Card>` its hover glow |
+| `variants.ts` | Motion | hoverLift, tap, accordion, pageTransition (quiz steps, panels; not whole pages) |
+| MotionProvider | Motion | In the root layout: `LazyMotion` (use `m.*`) + `reducedMotion="user"` |
+
+Rules: GSAP animates grid cells and data; Motion animates the element inside (BentoCard does this).
+Every GSAP utility runs inside `gsap.matchMedia("(prefers-reduced-motion: no-preference)")` and is
+server-rendered in its final state, so reduced motion (or no JavaScript) shows final numbers, drawn
+charts and visible content.
