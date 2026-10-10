@@ -12,13 +12,16 @@ export const home = {
     // Real results: figures come from caseStudies.ts, never typed here.
     reportCard: {
       title: "Growth report",
+      realLabel: "Real client results",
       caseStudy: "vision-plywoods-meta-ads",
-      sourceNote: "Real client results from the ads dashboard.",
+      sourceNote:
+        "Figures from Meta Ads Manager. An enquiry is a customer starting a chat from the ad.",
       chart: {
-        label: "Average enquiries per month, by client",
-        // Only clients with a true per-month figure. Mukilam Academy's 703 covers 5 weeks.
+        label: "Enquiries per campaign",
+        // Total enquiries of each campaign (each over its own period), rising left to right.
         caseStudies: [
-          "dindigul-school-of-tnpsc-meta-ads",
+          "jd-leathers-meta-ads",
+          "mukilam-academy-meta-ads",
           "vision-plywoods-meta-ads",
         ],
       },
@@ -27,8 +30,8 @@ export const home = {
 
   clientStrip: {
     heading: "Trusted by 35+ local businesses across 10+ industries",
-    pauseLabel: "Pause scrolling client names",
-    playLabel: "Play scrolling client names",
+    pauseLabel: "Pause scrolling client list",
+    playLabel: "Play scrolling client list",
   },
 
   // Services bento: see services.ts and servicesSection.
@@ -38,6 +41,8 @@ export const home = {
     heading: "How DIGIFI grows your business",
     intro:
       "Four steps that work together. Each one makes the next one work better, so you're not paying for pieces that don't connect.",
+    stepLabel: "Step",
+    linkLabel: "learn more about",
     // Steps come from services.ts (journey field), in this order:
     order: [
       "google-business-profile",
@@ -55,6 +60,8 @@ export const home = {
     intro:
       "Every month you get one clear report in plain language. No jargon, no vanity numbers. Just what came in, what it cost, and what we're doing next.",
     sampleLabel: "Sample report",
+    illustrativeNote:
+      "An illustration of the format. Your report shows your own real numbers.",
     panels: {
       leadsBySource: "Leads by source",
       costPerLead: "Cost per lead trend",
@@ -62,7 +69,7 @@ export const home = {
       ranking: "Google Maps ranking",
     },
     sources: ["Meta Ads", "Google Business Profile", "Website", "WhatsApp"],
-    placeholderValue: "[TBD]",
+    channels: ["Calls", "WhatsApp clicks"],
     points: [
       "Enquiries by source, so you know what's worth paying for",
       "Cost per enquiry, month by month",
@@ -121,6 +128,7 @@ export const home = {
   // FAQ: see faqs.ts and faqSection.
 
   finalCta: {
+    eyebrow: "Next step",
     heading: "Ready to get more enquiries?",
     body: "Book your free Growth Assessment. We'll show you where you stand online and the first steps to grow.",
   },

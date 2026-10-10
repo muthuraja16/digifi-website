@@ -115,5 +115,12 @@ export const industries: Industry[] = [
 ];
 
 export const industriesSection = {
+  eyebrow: "Industries",
+  heading: "We know how customers in your industry decide",
+  intro:
+    "35+ local businesses across 10+ industries. Here are the six groups we work with most.",
+  clientsLabel: "Clients include",
   ctaLine: "Don't see your industry? Let's talk.",
+  whatsappMessage:
+    "Hi DIGIFI, my business is in a different industry. Can you help us grow?",
 };

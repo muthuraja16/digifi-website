@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import { duration, ease, gsap, motionOK, onceInView, useGSAP } from "./gsap";
+import { NumberText } from "@/components/ui/NumberText";
+import { formatNumber, numberHtml } from "@/lib/numbers";
+import { duration, ease, gsap, motionOK, onceVisible, useGSAP } from "./gsap";
 
 type CountUpProps = {
   /** The real, final number. Rendered as-is on the server and under reduced motion. */
@@ -12,11 +14,9 @@ type CountUpProps = {
   className?: string;
 };
 
-const format = (n: number, decimals: number) =>
-  n.toLocaleString("en-IN", {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  });
+// Prefix/suffix are short content strings ("₹", "%"); escape them before injecting.
+const escape = (s: string) =>
+  s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
 /**
  * Counts from 0 to `value` (1.4s, Geist Mono) the first time it scrolls into view.
@@ -30,7 +30,7 @@ export function CountUp({
   className = "",
 }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const final = `${prefix}${format(value, decimals)}${suffix}`;
+  const final = `${prefix}${formatNumber(value, decimals)}${suffix}`;
 
   useGSAP(
     () => {
@@ -39,8 +39,9 @@ export function CountUp({
       const mm = gsap.matchMedia();
       mm.add(motionOK, () => {
         const counter = { n: 0 };
+        const finalHtml = el.innerHTML;
         const render = () => {
-          el.textContent = `${prefix}${format(counter.n, decimals)}${suffix}`;
+          el.innerHTML = `${escape(prefix)}${numberHtml(counter.n, decimals)}${escape(suffix)}`;
         };
         render();
         gsap.to(counter, {
@@ -48,11 +49,11 @@ export function CountUp({
           duration: duration.counter,
           ease: ease.out,
           onUpdate: render,
-          scrollTrigger: onceInView(el),
+          scrollTrigger: onceVisible(el),
         });
         // Under reduced motion (or on revert) show the final value.
         return () => {
-          el.textContent = final;
+          el.innerHTML = finalHtml;
         };
       });
       return () => mm.revert();
@@ -63,7 +64,12 @@ export function CountUp({
   return (
     <span className={`font-mono tabular-nums ${className}`}>
       <span ref={ref} aria-hidden="true">
-        {final}
+        <NumberText
+          value={value}
+          decimals={decimals}
+          prefix={prefix}
+          suffix={suffix}
+        />
       </span>
       <span className="sr-only">{final}</span>
     </span>

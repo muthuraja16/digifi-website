@@ -157,6 +157,7 @@ fallback, so no layout shift):
 | Body | Bricolage Grotesque | 16px | 400 | 0 | default on `<body>` |
 | Label / eyebrow | Bricolage Grotesque | 13px uppercase | 600 | 0.08em | `eyebrow` |
 | Metric (big numbers) | Geist Mono | 36 → 56px | 500 | -0.02em | `metric` |
+| Compact data card numbers (added Stage 5) | Geist Mono | 28 → 32px | 500 | -0.02em | `metric-md` |
 | Small numbers, prices, steps | Geist Mono | 14 → 16px | 500 | 0 | `metric-sm` |
 
 Line height: headings 1.05–1.15, body 1.6. "Desktop" sizes apply from the `md` breakpoint (768px).
@@ -326,3 +327,14 @@ Rules: GSAP animates grid cells and data; Motion animates the element inside (Be
 Every GSAP utility runs inside `gsap.matchMedia("(prefers-reduced-motion: no-preference)")` and is
 server-rendered in its final state, so reduced motion (or no JavaScript) shows final numbers, drawn
 charts and visible content.
+
+### Homepage additions (Stage 5)
+
+- `metric-md` (28→32px Geist Mono) for compact data cards; `num-sep` tightens the full-width comma and
+  point of Geist Mono figures. Use `<NumberText>` / `CountUp` (both apply it) instead of formatting
+  numbers by hand.
+- Hero H1 is 60px between 1024 and 1279px (narrow hero column), 72px from 1280px.
+- `<Reveal hiddenUntilReady>` for above-the-fold reveals (hero card only). Counters and charts start as
+  soon as any part is visible (`onceVisible`); fades start at 85% (`onceInView`).
+- "Up" numbers: `text-lime-400` on navy, `text-lime-text` on light. No "+%" badges without real
+  before/after figures.

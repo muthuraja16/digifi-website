@@ -5,7 +5,7 @@
 - [x] Stage 2: brief.md (page-by-page plan and content)
 - [x] Stage 3: Foundation, layout, and rendering strategy
 - [x] Stage 4: Design system components and animation utilities
-- [ ] Stage 5: Homepage (premium)
+- [x] Stage 5: Homepage (premium)
 - [ ] Stage 6: Service pages, Results, Industries, About
 - [ ] Stage 7: Trust pages and trust elements
 - [ ] Stage 8: Supabase setup
@@ -100,3 +100,13 @@
 - Headline approved. Meta Ads terms: 3-month minimum, then 1 month's notice (FAQ + plan cards). AI-turnaround line confirmed. Error colour tokens added: `error` #C62828, `error-on-dark` #FF8A80.
 - "What DIGIFI did" written for all four from Muthuraja's process description (research → creatives on pain points → data-led improvement). Still to come: ads dashboard screenshots.
 - Screenshots (10 Oct): Vision Plywoods, Mukilam Academy, JD Leathers cropped to campaign/results/cost-per-result rows in `public/case-studies/` (removed other campaigns, another client "Olympic Traders", budgets and spend). Results are Meta "messaging conversations"; noted on the site. Mukilam period corrected to 24 Apr–31 May 2025 per the screenshot. DST screenshot still to come.
+
+## Stage 5 notes (2026-10-10)
+
+- Homepage built: all 11 sections in design.md order, all copy from `src/content`. Components in `src/components/sections/home/` plus reusable `FaqSection` and `FinalCtaBand` (for later pages).
+- Real data instead of placeholders: hero "Growth report" card = Vision Plywoods (1,942 enquiries, 323/month, ₹7.90 CPL); chart = total enquiries per campaign (JD Leathers 335 → Mukilam 703 → Vision 1,942); Meta Ads bento card shows the same proof; results = 4 real case studies. No "+%" badges and no Google ranking metric: no before/after or ranking data exists. "What your monthly report looks like" uses shapes only, no numbers, labelled "Sample report".
+- Motion: hero card hidden-until-ready (no flash; `<noscript>` fallback), counters + bars start as soon as visible; StaggerGroup/Reveal on sections; journey pins only on screens ≥768px wide and ≥800px tall (all 4 steps fit), otherwise a stepper with fade-ins; client marquee is the only loop (pause button, pauses on hover/focus, static wrapped list under reduced motion).
+- Verified (production build, Playwright): LCP = H1 at 1.46s (390px, 4× CPU, ~6 Mbps) and 0.79s (1440px); CLS 0–0.0002; no console errors; no horizontal overflow at 1440/1024/768/390; pinning advances steps 1→4; reduced motion: card visible, counters final, bars drawn, no pin, static marquee.
+- Fixed during review: bento empty space (now 8+4 / 4+8), journey cards too tall for 900px screens (compact cards, title is the link), results cards cramped at 4 columns (now 2×2, wide-logo tile), chart bars misaligned with labels, Geist Mono separators ("1 , 942" → tightened via `num-sep`), counters showing 0 near the bottom edge, reduced-motion marquee stretching the page to 3,672px, hero headline wrapping to 5 lines at 1024px (60px between 1024–1279px), final CTA band merging with the footer (now navy-900).
+- Screenshots in `docs/screenshots/`: `home-{1440,1024,768,390}-hero.png` (with motion, after the card animation) and `home-{1440,1024,768}-full.png` + `home-390-full-{1,2}.png` (full page, captured with reduced motion so every section is fully visible; the phone page is taller than Chrome's 16,384px screenshot limit, so it's in two halves).
+- Chrome DevTools MCP was unavailable this session (failed to connect); Playwright was used for screenshots, LCP/CLS measurement (CDP throttling) and reduced-motion emulation.

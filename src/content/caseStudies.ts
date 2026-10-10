@@ -14,8 +14,8 @@ export type CaseStudyResult = {
 export type CaseStudy = {
   slug: string;
   client: string;
-  /** Path under /public; only for clients who gave logo permission. */
-  logo: string | null;
+  /** Only for clients who gave logo permission. Width/height are the file's pixel size. */
+  logo: { src: string; width: number; height: number } | null;
   industry: IndustrySlug;
   /** The client's own trade, more specific than the industry group. */
   trade: string;
@@ -38,7 +38,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "vision-plywoods-meta-ads",
     client: "Vision Plywoods",
-    logo: "/clients/vision-plywoods.png",
+    logo: { src: "/clients/vision-plywoods.png", width: 1453, height: 320 },
     industry: "manufacturing-b2b",
     trade: "Plywood manufacturer",
     services: ["meta-ads"],
@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "mukilam-academy-meta-ads",
     client: "Mukilam Academy",
-    logo: "/clients/mukilam-academy.png",
+    logo: { src: "/clients/mukilam-academy.png", width: 250, height: 250 },
     industry: "education-coaching",
     trade: "Coaching academy",
     services: ["meta-ads"],
@@ -84,7 +84,11 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "dindigul-school-of-tnpsc-meta-ads",
     client: "Dindigul School of TNPSC",
-    logo: "/clients/dindigul-school-of-tnpsc.jpg",
+    logo: {
+      src: "/clients/dindigul-school-of-tnpsc.jpg",
+      width: 887,
+      height: 887,
+    },
     industry: "education-coaching",
     trade: "TNPSC exam coaching",
     services: ["meta-ads"],
@@ -106,7 +110,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "jd-leathers-meta-ads",
     client: "JD Leathers",
-    logo: "/clients/jd-leathers.webp",
+    logo: { src: "/clients/jd-leathers.webp", width: 2000, height: 2000 },
     industry: "retail-lifestyle",
     trade: "Leather products showroom",
     services: ["meta-ads"],
@@ -134,9 +138,9 @@ export function getCaseStudy(slug: string): CaseStudy {
 }
 
 /** Clients whose logos may be shown (written permission from DIGIFI, 10 October 2026). */
-export const clientLogos = caseStudies
-  .filter((c): c is CaseStudy & { logo: string } => c.logo !== null)
-  .map((c) => ({ client: c.client, logo: c.logo }));
+export const clientLogos = caseStudies.flatMap((c) =>
+  c.logo ? [{ client: c.client, ...c.logo }] : [],
+);
 
 export const resultsSection = {
   eyebrow: "Results",

@@ -1,7 +1,7 @@
 "use client";
 
 import { type ComponentProps, useRef } from "react";
-import { duration, ease, gsap, motionOK, onceInView, useGSAP } from "./gsap";
+import { duration, ease, gsap, motionOK, onceVisible, useGSAP } from "./gsap";
 
 /**
  * Draws every SVG stroke marked `data-draw` inside it (chart lines, and bars drawn as thick
@@ -31,7 +31,7 @@ export function DrawLine(props: ComponentProps<"div">) {
           duration: duration.chart,
           stagger: duration.stagger,
           ease: ease.out,
-          scrollTrigger: onceInView(root),
+          scrollTrigger: onceVisible(root),
         });
       });
       return () => mm.revert();

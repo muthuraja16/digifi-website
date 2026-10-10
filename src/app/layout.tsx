@@ -44,6 +44,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${bricolage.variable} ${geistMono.variable}`}>
+      <head>
+        {/* Without JavaScript nothing animates, so hidden-until-ready content must show. */}
+        <noscript>
+          <style>{"[data-reveal-hidden]{opacity:1!important}"}</style>
+        </noscript>
+      </head>
       <body className="pb-(--mobile-bar-h) md:pb-0">
         <a
           href="#main"

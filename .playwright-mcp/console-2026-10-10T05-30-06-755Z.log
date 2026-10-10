@@ -1,0 +1,2 @@
+[ 1620759ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/privacy-policy?_rsc=5CB68i4pnAekjehf:0
+[ 1620759ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/terms?_rsc=5CB68i4pnAekjehf:0

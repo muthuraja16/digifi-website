@@ -49,6 +49,14 @@
     0 1px 2px rgba(10, 19, 64, 0.04), 0 8px 24px rgba(10, 19, 64, 0.06);
   --shadow-hover: 0 12px 32px rgba(0, 100, 248, 0.12);
 
+  --animate-marquee: marquee 50s linear infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
@@ -86,6 +94,13 @@
   label,
   summary {
     touch-action: manipulation;
+  }
+
+  /* Above-the-fold reveals start hidden only when motion is allowed (see Reveal hiddenUntilReady). */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal-hidden] {
+      opacity: 0;
+    }
   }
 
   /* Lock page scroll while the mobile menu dialog is open. */
@@ -231,6 +246,25 @@
   @variant md {
     font-size: 56px;
   }
+}
+
+/* Mid-size numbers for compact data cards (hero report card): 28 → 32px. */
+@utility metric-md {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+
+  @variant md {
+    font-size: 32px;
+  }
+}
+
+/* Tightens the full-width comma and point of Geist Mono figures (see lib/numbers.ts). */
+@utility num-sep {
+  margin-inline: -0.2em;
 }
 
 @utility metric-sm {

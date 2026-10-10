@@ -32,4 +32,14 @@ export const onceInView = (trigger: Element) => ({
   once: true,
 });
 
+/**
+ * Data animations (counters, charts) start as soon as any part is on screen, so a visible
+ * number never sits at 0 or a visible chart empty while waiting for the 85% line.
+ */
+export const onceVisible = (trigger: Element) => ({
+  trigger,
+  start: "top bottom",
+  once: true,
+});
+
 export { gsap, ScrollTrigger, useGSAP };
