@@ -1,10 +1,11 @@
-import { PageHero } from "@/components/sections/PageHero";
-import { pages, seo } from "@/content/pages";
+// DRAFT — to be reviewed by a legal professional before launch.
+import { LegalPage } from "@/components/sections/LegalPage";
+import { privacyPolicy } from "@/content/legal";
+import { seo } from "@/content/pages";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata(seo.privacyPolicy);
 
-// Placeholder until the policy is written in Stage 7.
 export default function PrivacyPolicyPage() {
-  return <PageHero {...pages.legal.privacyPolicy} />;
+  return <LegalPage document={privacyPolicy} />;
 }

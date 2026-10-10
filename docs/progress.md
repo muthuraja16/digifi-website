@@ -7,7 +7,7 @@
 - [x] Stage 4: Design system components and animation utilities
 - [x] Stage 5: Homepage (premium)
 - [x] Stage 6: Service pages, Results, Industries, About
-- [ ] Stage 7: Trust pages and trust elements
+- [x] Stage 7: Trust pages and trust elements
 - [ ] Stage 8: Supabase setup
 - [ ] Stage 9: Forms, quiz, and Resend email notifications
 - [ ] Stage 10: Lead dashboard and lead-generation features
@@ -123,3 +123,12 @@
 - Verified (production build, Playwright click-through): all 12 public pages 200, every internal link resolves, industry anchors exist, no console errors, no horizontal overflow at 390px. Screenshots: `docs/screenshots/stage6/*-390-{top,full}.png`.
 - Pending for Stage 9: the `#health-check` (quiz) and `#assessment-form` targets on /growth-assessment (links already land on the page).
 - webapp-testing skill is not installed; the click-through used the Playwright MCP instead.
+
+## Stage 7 notes (2026-10-10)
+
+- /privacy-policy (DPDP Act 2023) and /terms (with "No guaranteed results") written in `src/content/legal.ts`, rendered by `LegalPage`: 720px text column, sticky table of contents, last-updated date. Both carry "Draft — to be reviewed by a legal professional before launch." as a code comment (content file and both page files) and in docs/brief.md §7.13; not shown on the page.
+- Legal [TBD]s: registered business name, retention period, grievance officer name, grievance response time, court jurisdiction.
+- /contact: WhatsApp, phone, email and location cards, office-move note, trust line. Contact form comes in Stage 9.
+- Trust: `FormTrustLine` ("Your data stays private. No spam calls.") on /contact and ready for every Stage 9 form; client strip moved to `components/sections/ClientStrip.tsx` and added to all four service pages.
+- Hidden until real data: `GoogleRatingBadge` (homepage hero) and `TestimonialsSection` (homepage, after Results), driven by `src/content/trust.ts`; switch-on steps in docs/brief.md §7.13.
+- Verified: 14/14 TOC anchors land under the header, footer links both legal pages, hidden components render nothing, no console errors, no overflow at 390px. Screenshots in `docs/screenshots/stage7/`.

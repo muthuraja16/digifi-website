@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { ClientStrip } from "@/components/sections/ClientStrip";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
 import { PageHero } from "@/components/sections/PageHero";
@@ -64,6 +65,7 @@ export default async function ServicePage({
           </div>
         ) : null}
       </PageHero>
+      <ClientStrip />
       <ServiceProblem service={service} />
       <ServiceProcess service={service} />
       <ServiceIncluded service={service} />

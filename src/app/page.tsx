@@ -1,6 +1,6 @@
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalCtaBand } from "@/components/sections/FinalCtaBand";
-import { ClientStrip } from "@/components/sections/home/ClientStrip";
+import { ClientStrip } from "@/components/sections/ClientStrip";
 import { HealthCheckTeaser } from "@/components/sections/home/HealthCheckTeaser";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { IndustriesSection } from "@/components/sections/home/IndustriesSection";
@@ -9,6 +9,7 @@ import { ResultsSection } from "@/components/sections/home/ResultsSection";
 import { SampleReportSection } from "@/components/sections/home/SampleReportSection";
 import { ServicesBento } from "@/components/sections/home/ServicesBento";
 import { WhyDigifi } from "@/components/sections/home/WhyDigifi";
+import { TestimonialsSection } from "@/components/sections/TrustElements";
 import { faqs } from "@/content/faqs";
 import { home } from "@/content/home";
 
@@ -21,6 +22,8 @@ export default function HomePage() {
       <ServicesBento />
       <JourneySection />
       <ResultsSection />
+      {/* Hidden until real testimonials exist (content/trust.ts). */}
+      <TestimonialsSection />
       <SampleReportSection />
       <IndustriesSection />
       <HealthCheckTeaser />

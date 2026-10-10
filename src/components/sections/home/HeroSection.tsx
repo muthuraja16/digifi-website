@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { GoogleRatingBadge } from "@/components/sections/TrustElements";
 import { RisingDots } from "@/components/ui/RisingDots";
 import { home } from "@/content/home";
 import { site, whatsappHref } from "@/content/site";
@@ -32,6 +33,8 @@ export function HeroSection() {
             <RisingDots className="mt-0.5" />
             {site.trustLine}
           </p>
+          {/* Hidden until DIGIFI's Google Business Profile has reviews (content/trust.ts). */}
+          <GoogleRatingBadge className="mt-4" />
         </div>
 
         <div className="relative col-span-12 lg:col-span-5">

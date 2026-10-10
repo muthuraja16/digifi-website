@@ -261,6 +261,25 @@ Brand-styled, copy in `site.notFound`, links to Home and the assessment.
 - Internal links: service → `/industries#<slug>` and related services; industries → service pages and
   /results; results → service pages.
 
+## 7.13 Legal pages and hidden trust elements (Stage 7)
+
+**Legal pages: Draft — to be reviewed by a legal professional before launch.** `/privacy-policy` and
+`/terms` (text in `src/content/legal.ts`) are drafts written for the Digital Personal Data Protection Act,
+2023. Before launch, fill in the `[TBD]` items (registered business name, retention period, grievance
+officer, grievance response time, court jurisdiction) and have a lawyer review both. Update `lastUpdated`
+whenever the text changes.
+
+**Trust elements in place:** contact details (phone, WhatsApp, email, "Dindigul, Tamil Nadu") in the footer
+and on /contact; client strip on the homepage and all four service pages; `FormTrustLine` ("Your data
+stays private. No spam calls.") on /contact now and under every form from Stage 9.
+
+**Hidden until real data exists** (each renders nothing while empty; never fill with made-up values):
+
+| Component | Shown on | How to switch it on |
+|---|---|---|
+| `GoogleRatingBadge` | Homepage hero, under the trust line | Once DIGIFI's Google Business Profile exists and has reviews: set `googleRating` in `src/content/trust.ts` to `{ rating, count, url }` copied from the profile (rating to one decimal, review count, link to the reviews). Stage 12 can later replace this with live data from the Places API |
+| `TestimonialsSection` | Homepage, after Results | Add real client quotes to `testimonials` in `src/content/trust.ts`: quote, client name, role and business, and a note of the client's written permission (date). Quote exactly; don't edit meaning |
+
 ## 7.12 Rendering strategy (Stage 3)
 
 Next.js 16 with Cache Components and Partial Prefetching (see `next.config.ts`).
