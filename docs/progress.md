@@ -6,7 +6,7 @@
 - [x] Stage 3: Foundation, layout, and rendering strategy
 - [x] Stage 4: Design system components and animation utilities
 - [x] Stage 5: Homepage (premium)
-- [ ] Stage 6: Service pages, Results, Industries, About
+- [x] Stage 6: Service pages, Results, Industries, About
 - [ ] Stage 7: Trust pages and trust elements
 - [ ] Stage 8: Supabase setup
 - [ ] Stage 9: Forms, quiz, and Resend email notifications
@@ -110,3 +110,16 @@
 - Fixed during review: bento empty space (now 8+4 / 4+8), journey cards too tall for 900px screens (compact cards, title is the link), results cards cramped at 4 columns (now 2×2, wide-logo tile), chart bars misaligned with labels, Geist Mono separators ("1 , 942" → tightened via `num-sep`), counters showing 0 near the bottom edge, reduced-motion marquee stretching the page to 3,672px, hero headline wrapping to 5 lines at 1024px (60px between 1024–1279px), final CTA band merging with the footer (now navy-900).
 - Screenshots in `docs/screenshots/`: `home-{1440,1024,768,390}-hero.png` (with motion, after the card animation) and `home-{1440,1024,768}-full.png` + `home-390-full-{1,2}.png` (full page, captured with reduced motion so every section is fully visible; the phone page is taller than Chrome's 16,384px screenshot limit, so it's in two halves).
 - Chrome DevTools MCP was unavailable this session (failed to connect); Playwright was used for screenshots, LCP/CLS measurement (CDP throttling) and reduced-motion emulation.
+
+## Stage 6 notes (2026-10-10)
+
+- Service template (`src/app/services/[slug]/page.tsx` + `components/sections/ServiceSections.tsx`): dark hero (both CTAs + "From ₹…" price chip) → problem → how we work (RisingDots step markers) → what's included → results for the service (only Meta Ads has case studies; other pages skip the section) → who it's for (links to `/industries#slug`) + related services → plans → service + general FAQs → final CTA band with the page's WhatsApp message.
+- Website Design adds the portfolio (BrowserFrame; URLs and screenshots still [TBD]), the build process, "Get a website quote" in the hero and a custom-website quote card under Digital Foundation™.
+- Pricing: `PricingCards` / `PlansSection` show DIGIFI's real plans from `packages.ts` (Local Starter/Growth/Dominance were replaced in Stage 2). Full feature lists behind a native "See everything included" disclosure; each card's CTA opens WhatsApp with the plan's message; a blue "not sure which plan?" assessment CTA under every plans section. Used on all service pages and /growth-assessment (paid Digital Growth Assessment™ + Digital Foundation™).
+- /results: service filter (ChipButtons, announced count), all case studies with an expandable full story (challenge → what we did → results + cropped Ads Manager screenshot), empty state with WhatsApp CTA, honest note.
+- /industries: 6 large cards with anchors (problem, how we help, client chips, service links, results link where case studies exist) + "Don't see your industry?" WhatsApp band.
+- /about: story, numbers (CountUp), approach, team (rising-dots placeholder until names/photos; no stock photos), values, CTA.
+- `CaseStudyCard` extracted and shared by Home, Results and service pages.
+- Verified (production build, Playwright click-through): all 12 public pages 200, every internal link resolves, industry anchors exist, no console errors, no horizontal overflow at 390px. Screenshots: `docs/screenshots/stage6/*-390-{top,full}.png`.
+- Pending for Stage 9: the `#health-check` (quiz) and `#assessment-form` targets on /growth-assessment (links already land on the page).
+- webapp-testing skill is not installed; the click-through used the Playwright MCP instead.

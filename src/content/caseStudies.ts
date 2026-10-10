@@ -28,7 +28,7 @@ export type CaseStudy = {
   /** Average enquiries per month, where the data supports it (homepage chart). */
   monthlyEnquiries?: number;
   /** Cropped Meta Ads Manager row (campaign, results, cost per result); no spend or other clients. */
-  screenshot: string | null;
+  screenshot: { src: string; width: number; height: number } | null;
   screenshotAlt: string;
 };
 
@@ -55,7 +55,11 @@ export const caseStudies: CaseStudy[] = [
       { label: "Cost per lead", value: 7.9, prefix: "₹", decimals: 2 },
     ],
     monthlyEnquiries: 323,
-    screenshot: "/case-studies/vision-plywoods-meta-ads.png",
+    screenshot: {
+      src: "/case-studies/vision-plywoods-meta-ads.png",
+      width: 765,
+      height: 113,
+    },
     screenshotAlt:
       "Meta Ads Manager: Vision Plywood Engagement campaign, 1,942 messaging conversations at ₹7.90 per result",
   },
@@ -77,7 +81,11 @@ export const caseStudies: CaseStudy[] = [
       { label: "Enquiries", value: 703, context: "in 5 weeks" },
       { label: "Cost per lead", value: 9.16, prefix: "₹", decimals: 2 },
     ],
-    screenshot: "/case-studies/mukilam-academy-meta-ads.png",
+    screenshot: {
+      src: "/case-studies/mukilam-academy-meta-ads.png",
+      width: 770,
+      height: 112,
+    },
     screenshotAlt:
       "Meta Ads Manager: Mukilam Academy campaign, 703 messaging conversations at ₹9.16 per result",
   },
@@ -125,7 +133,11 @@ export const caseStudies: CaseStudy[] = [
       { label: "Enquiries", value: 335, context: "in 20 days" },
       { label: "Cost per lead", value: 5.57, prefix: "₹", decimals: 2 },
     ],
-    screenshot: "/case-studies/jd-leathers-meta-ads.png",
+    screenshot: {
+      src: "/case-studies/jd-leathers-meta-ads.png",
+      width: 955,
+      height: 115,
+    },
     screenshotAlt:
       "Meta Ads Manager: JD Leathers Clearance Sale 2025 campaign, 335 messaging conversations at ₹5.57 per result",
   },

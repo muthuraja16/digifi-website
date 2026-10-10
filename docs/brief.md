@@ -252,6 +252,15 @@ Brand-styled, copy in `site.notFound`, links to Home and the assessment.
 
 ---
 
+## 7.11b Stage 6 build notes
+
+- Service pages skip "Results for this service" until a case study exists for that service (today only
+  Meta Ads). Website Design shows the portfolio in that slot.
+- Plans on service pages and /growth-assessment come from `packages.ts` (`PlansSection`); plan-card CTA
+  opens WhatsApp with the plan's message, the band below links to the free assessment.
+- Internal links: service → `/industries#<slug>` and related services; industries → service pages and
+  /results; results → service pages.
+
 ## 7.12 Rendering strategy (Stage 3)
 
 Next.js 16 with Cache Components and Partial Prefetching (see `next.config.ts`).

@@ -41,16 +41,23 @@ export const about = {
     ],
   },
   numbers: {
-    heading: "DIGIFI in numbers",
+    eyebrow: "DIGIFI in numbers",
+    heading: "Three years, 35+ local businesses",
     items: [
-      { value: "3", label: "years in business" },
-      { value: "35+", label: "clients served" },
-      { value: "10+", label: "industries" },
-      { value: "15+", label: "years of combined IT and marketing experience" },
+      { value: 3, suffix: "", label: "years in business" },
+      { value: 35, suffix: "+", label: "clients served" },
+      { value: 10, suffix: "+", label: "industries" },
+      {
+        value: 15,
+        suffix: "+",
+        label: "years of combined IT and marketing experience",
+      },
     ],
   },
   team: {
+    eyebrow: "People",
     heading: "The team",
+    photoPending: "Photo coming soon",
     intro: "[TBD: one line about the team]",
     // [TBD: team members: names, roles and real photos]. One entry per person.
     members: [

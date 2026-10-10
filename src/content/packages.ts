@@ -975,7 +975,11 @@ export const pricingLabels = {
   adBudgetSuffix: "+/month, paid to Meta",
   bestFor: "Best for",
   addOns: "Also available (extra cost)",
-  cta: "Get started",
+  cta: "Ask about this plan",
+  seeIncluded: "See everything included",
+  delivery: "Delivery",
+  notSure:
+    "Not sure which plan fits? Book a free Growth Assessment and we'll recommend one.",
   customWebsite: {
     heading: "Need a bigger website?",
     body: "For multi-page websites like the ones we built for Vision Plywoods and Wave Power Tech, we'll quote after understanding what you need.",

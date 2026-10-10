@@ -317,6 +317,7 @@ export const services: Service[] = [
 
 export const websitePortfolio = {
   heading: "Websites we've built",
+  visitLabel: "Visit the live site",
   intro:
     "Live sites for local manufacturers. Visit them and see how they work on your phone.",
   items: [

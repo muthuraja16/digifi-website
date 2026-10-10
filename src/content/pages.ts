@@ -126,6 +126,22 @@ export const serviceSeo: Record<ServiceSlug, PageSeo> = {
 };
 
 export const pages = {
+  // Shared section labels for the four service pages (content per service lives in services.ts).
+  servicePage: {
+    problemEyebrow: "The problem",
+    processEyebrow: "How we work",
+    includedEyebrow: "What's included",
+    includedHeading: "Everything you get",
+    resultsEyebrow: "Results",
+    resultsHeading: "What this has done for clients like you",
+    industriesEyebrow: "Who it's for",
+    industriesHeading: "Businesses we do this for",
+    plansEyebrow: "Plans and prices",
+    priceFromLabel: "From",
+    relatedHeading: "Works best together with",
+    portfolioEyebrow: "Our work",
+  },
+
   results: {
     hero: {
       eyebrow: "Results",
@@ -143,6 +159,10 @@ export const pages = {
       results: "Results",
     },
     disclaimer: "Results vary by business, budget and market.",
+    emptyState:
+      "We haven't published results for this service yet. Ask us on WhatsApp and we'll share examples.",
+    serviceLink: "About this service",
+    countLabel: "case studies shown",
   },
 
   industries: {
@@ -156,6 +176,8 @@ export const pages = {
       problem: "The challenge",
       howWeHelp: "How we help",
       clients: "Clients include",
+      services: "Services that help most",
+      results: "See results in this industry",
     },
   },
 
