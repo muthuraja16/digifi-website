@@ -32,7 +32,7 @@ export type CaseStudy = {
 };
 
 // Real results supplied by DIGIFI (10 October 2026); client names and logos shown with permission.
-// "What we did" details are still to come from DIGIFI.
+// "What we did" written from DIGIFI's own description of its process (10 October 2026).
 export const caseStudies: CaseStudy[] = [
   {
     slug: "vision-plywoods-meta-ads",
@@ -44,8 +44,9 @@ export const caseStudies: CaseStudy[] = [
     period: "Apr–Sep 2026",
     challenge: "Not enough enquiries for their products.",
     whatWeDid: [
-      "Ran Meta Ads on Facebook and Instagram to bring in product enquiries.",
-      "[TBD: more detail on what DIGIFI did]",
+      "Studied the business and its buyers: who orders plywood, what problems they face and what makes them hesitate.",
+      "Designed clear, eye-catching Facebook and Instagram ads that answer those concerns directly.",
+      "Reviewed the campaign data regularly and kept refining it, month after month.",
     ],
     results: [
       { label: "Enquiries", value: 1942, context: "in 6 months" },
@@ -66,8 +67,9 @@ export const caseStudies: CaseStudy[] = [
     period: "May 2025",
     challenge: "Not enough enquiries for their courses.",
     whatWeDid: [
-      "Ran Meta Ads on Facebook and Instagram to bring in course enquiries.",
-      "[TBD: more detail on what DIGIFI did]",
+      "Got to know the academy and its students: their goals, their worries and why they put off enrolling.",
+      "Built engaging ad creatives that speak to those worries and make the courses easy to understand.",
+      "Tracked how every ad performed and improved the campaign based on what the data showed.",
     ],
     results: [
       { label: "Enquiries", value: 703, context: "in one month" },
@@ -87,8 +89,9 @@ export const caseStudies: CaseStudy[] = [
     period: "May–Jul 2025",
     challenge: "Not enough enquiries for their courses.",
     whatWeDid: [
-      "Ran Meta Ads on Facebook and Instagram to bring in course enquiries.",
-      "[TBD: more detail on what DIGIFI did]",
+      "Researched TNPSC aspirants: what they struggle with, what frustrates them about preparation and what they look for in a coaching centre.",
+      "Designed ads around those real pain points, so the right aspirants stopped scrolling and enquired.",
+      "Used a structured review of the campaign data to keep improving results over three months.",
     ],
     results: [
       { label: "Enquiries per month", value: 215, context: "on average" },
@@ -108,8 +111,9 @@ export const caseStudies: CaseStudy[] = [
     period: "Mar 2025",
     challenge: "Needed enquiries for their clearance sale.",
     whatWeDid: [
-      "Ran Meta Ads on Facebook and Instagram for the clearance sale.",
-      "[TBD: more detail on what DIGIFI did]",
+      "Looked at the sale, the products and the shoppers it needed to reach.",
+      "Created bold, attention-grabbing ads that gave people a clear reason to visit during the sale.",
+      "Watched the numbers closely through the 20 days and adjusted the campaign as results came in.",
     ],
     results: [
       { label: "Enquiries", value: 335, context: "in 20 days" },
