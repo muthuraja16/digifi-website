@@ -31,8 +31,8 @@ export const faqs: Faq[] = [
     id: "contract",
     question: "Do I have to sign a long contract?",
     answer:
-      "No. Our monthly Google Business Profile and WhatsApp Marketing plans have no lock-in, so you can cancel anytime. Setup services are one-time payments with no monthly fee. [confirm: Meta Ads plan terms and notice period]",
-    confirmed: false,
+      "Not a long one. Meta Ads plans have a minimum of 3 months, then you can stop with 1 month's notice. Our monthly Google Business Profile and WhatsApp Marketing plans have no lock-in, so you can cancel anytime. Setup services are one-time payments with no monthly fee.",
+    confirmed: true,
   },
   {
     id: "how-know-working",

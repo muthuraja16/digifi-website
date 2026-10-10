@@ -64,7 +64,12 @@ export const industries: Industry[] = [
     name: "Retail & Lifestyle",
     icon: "ShoppingBag",
     covers: "Jewellery, fashion and furniture stores",
-    clients: ["Aishwaryam Jewellers", "Isha Boutique", "Royal Oak Furniture"],
+    clients: [
+      "Aishwaryam Jewellers",
+      "Isha Boutique",
+      "Royal Oak Furniture",
+      "JD Leathers",
+    ],
     problem:
       'Shoppers search "near me" and walk into the store that shows up with good photos and reviews. Festival and wedding seasons are short, and missing them costs a year.',
     howWeHelp:

@@ -178,6 +178,7 @@ export const plans: Plan[] = [
         ],
       },
     ],
+    terms: "Minimum 3 months, then 1 month's notice to stop.",
     summary:
       "For businesses that want more visibility and steady first enquiries.",
     whatsappMessage: "Hi DIGIFI, I'm interested in the Meta Ads Start plan.",
@@ -282,6 +283,7 @@ export const plans: Plan[] = [
         ],
       },
     ],
+    terms: "Minimum 3 months, then 1 month's notice to stop.",
     summary: "For businesses that want qualified leads every month.",
     whatsappMessage: "Hi DIGIFI, I'm interested in the Meta Ads Grow plan.",
   },
@@ -383,6 +385,7 @@ export const plans: Plan[] = [
         ],
       },
     ],
+    terms: "Minimum 3 months, then 1 month's notice to stop.",
     summary:
       "For businesses serious about predictable growth and long-term customer acquisition.",
     whatsappMessage: "Hi DIGIFI, I'm interested in the Meta Ads Dominate plan.",

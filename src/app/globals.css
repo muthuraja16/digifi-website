@@ -35,6 +35,8 @@
   --color-body: #4a5578;
   --color-muted: #6b7494;
   --color-on-dark: #a9b4d6;
+  --color-error: #c62828; /* form errors on light (5.6:1 on white) */
+  --color-error-on-dark: #ff8a80; /* form errors on navy (6.8:1+) */
 
   /* Set by next/font in layout.tsx */
   --font-sans: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;

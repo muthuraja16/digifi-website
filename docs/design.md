@@ -97,6 +97,8 @@ Every color is a CSS variable on `:root` (`--color-<name>`) and a Tailwind color
 | `text-body` | `#4A5578` | `--color-body` → `text-body` | Body text on light |
 | `text-muted` | `#6B7494` | `--color-muted` → `text-muted` | Captions, labels |
 | `text-on-dark` | `#A9B4D6` | `--color-on-dark` → `text-on-dark` | Body text on navy |
+| `error` | `#C62828` | `--color-error` | Form errors on light (5.6:1 on white, 5.2:1 on surface). Added 10 Oct 2026, approved by Muthuraja |
+| `error-on-dark` | `#FF8A80` | `--color-error-on-dark` | Form errors on navy (6.8:1+) |
 
 Transparent tints of a token use Tailwind's opacity modifier on the same token, e.g. `border-white/8`
 (dark card border, `rgba(255,255,255,0.08)`) or `border-blue-600/30` (hover border).
@@ -304,9 +306,8 @@ styles through the `on-dark:` Tailwind variant (defined in `globals.css`), so no
 | BrowserFrame | `ui/BrowserFrame.tsx` | Portfolio screenshots (`next/image` with `fill` inside) |
 | Badge, Chip, ChipButton | `ui/Badge.tsx`, `ui/Chip.tsx` | ChipButton uses `aria-pressed` for filters |
 
-**Form errors:** the token list has no red. Errors are shown with an icon, bold navy (white on dark)
-text and a 2px navy border, never by colour alone. If a dedicated error colour is wanted, add it to the
-token list first.
+**Form errors:** red (`error` on light, `error-on-dark` on navy) plus an icon, bold text and a 2px
+border, so an error is never signalled by colour alone. Red is for errors only: never decoration or CTAs.
 
 **Motion utilities** (`src/components/motion/`):
 

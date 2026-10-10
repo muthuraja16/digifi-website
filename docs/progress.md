@@ -92,3 +92,10 @@
 - web-design-guidelines review: fixed overscroll-contain on the mobile menu, touch-action/tap highlight, scroll-padding-bottom for the mobile bar, min-w-0 on truncated URL, color-scheme on dark form controls, focus ring colour fading in (outline colour now always blue-600). Not changed on purpose: Title Case (brief uses sentence case), URL state for tabs/accordion.
 - Open for Stage 9: form submit must focus the first error and announce errors (aria-live).
 - Open question for Muthuraja: add an error colour token? (none in the Design DNA; errors currently use icon + bold text + heavier border.)
+
+## Inputs received (2026-10-10)
+
+- Real case studies (Meta Ads): Vision Plywoods 1,942 enquiries Apr–Sep 2026 (avg 323/month, ₹7.90 CPL); Mukilam Academy 703 in May 2025 (₹9.16); Dindigul School of TNPSC avg 215/month May–Jul 2025 (₹26.66); JD Leathers 335 in 20 days, Mar 2025 (₹5.57). `caseStudies.ts` rewritten; homepage report card reads from it. No before/after figures, so no "+%" badges.
+- Logos with permission in `public/clients/` (Vision Plywoods trimmed of white space). JD Leathers added to Retail & Lifestyle.
+- Headline approved. Meta Ads terms: 3-month minimum, then 1 month's notice (FAQ + plan cards). AI-turnaround line confirmed. Error colour tokens added: `error` #C62828, `error-on-dark` #FF8A80.
+- Still to come: "what DIGIFI did" details and ads dashboard screenshots for the four case studies.

@@ -17,8 +17,8 @@ import {
  *     <Input name="businessName" />
  *   </FormField>
  *
- * Errors: the token list has no red, so an error is marked by an icon, bold text and a heavier
- * navy border, never by colour alone. Optional fields say "(optional)" in their label.
+ * Errors: red (error / error-on-dark tokens) plus an icon, bold text and a 2px border, so an
+ * error is never signalled by colour alone. Optional fields say "(optional)" in their label.
  */
 
 type FieldContextValue = {
@@ -44,7 +44,7 @@ function ErrorMessage({ id, children }: { id: string; children: ReactNode }) {
   return (
     <p
       id={id}
-      className="mt-2 flex items-start gap-1.5 text-sm font-semibold text-navy-900 on-dark:text-white"
+      className="mt-2 flex items-start gap-1.5 text-sm font-semibold text-error on-dark:text-error-on-dark"
     >
       <CircleAlert
         aria-hidden="true"
@@ -107,7 +107,7 @@ export function FormField({
 }
 
 const control =
-  "block w-full rounded-inner border border-border bg-white text-base text-navy-900 transition-colors duration-150 placeholder:text-muted hover:border-navy-900/30 focus-visible:border-blue-600 disabled:cursor-not-allowed disabled:bg-surface disabled:text-muted aria-invalid:border-2 aria-invalid:border-navy-900 on-dark:border-white/15 on-dark:bg-navy-800 on-dark:text-white on-dark:scheme-dark on-dark:placeholder:text-on-dark on-dark:hover:border-white/35 on-dark:aria-invalid:border-white";
+  "block w-full rounded-inner border border-border bg-white text-base text-navy-900 transition-colors duration-150 placeholder:text-muted hover:border-navy-900/30 focus-visible:border-blue-600 disabled:cursor-not-allowed disabled:bg-surface disabled:text-muted aria-invalid:border-2 aria-invalid:border-error on-dark:border-white/15 on-dark:bg-navy-800 on-dark:text-white on-dark:scheme-dark on-dark:placeholder:text-on-dark on-dark:hover:border-white/35 on-dark:aria-invalid:border-error-on-dark";
 
 export function Input({
   leading,

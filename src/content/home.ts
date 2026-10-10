@@ -1,14 +1,6 @@
 // Homepage copy, in section order (docs/design.md §10).
 // Services, industries, case studies, FAQs and the quiz come from their own content files.
 
-export type ReportMetric = {
-  label: string;
-  /** Real figure from caseStudies.ts, or "[TBD]" on the sample report. */
-  value: string;
-  change: string;
-  trend: "up" | "down";
-};
-
 export const home = {
   hero: {
     eyebrow:
@@ -17,25 +9,19 @@ export const home = {
       "More enquiries for your business. Proof you can see every month.",
     subheading:
       "Meta Ads, Google Business Profile, WhatsApp marketing and websites, run by a local team that shows you exactly what's working.",
+    // Real results: figures come from caseStudies.ts, never typed here.
     reportCard: {
-      title: "Monthly growth report",
-      sampleLabel: "Sample report",
-      metrics: [
-        { label: "Enquiries", value: "[TBD]", change: "+[TBD]%", trend: "up" },
-        {
-          label: "Cost per lead",
-          value: "₹[TBD]",
-          change: "-[TBD]%",
-          trend: "down",
-        },
-        {
-          label: "Google ranking",
-          value: "#[TBD]",
-          change: "+[TBD]",
-          trend: "up",
-        },
-      ] satisfies ReportMetric[],
-      chartLabel: "Enquiries, last 3 months",
+      title: "Growth report",
+      caseStudy: "vision-plywoods-meta-ads",
+      sourceNote: "Real client results from the ads dashboard.",
+      chart: {
+        label: "Average enquiries per month, by client",
+        caseStudies: [
+          "dindigul-school-of-tnpsc-meta-ads",
+          "vision-plywoods-meta-ads",
+          "mukilam-academy-meta-ads",
+        ],
+      },
     },
   },
 
@@ -117,7 +103,7 @@ export const home = {
       {
         title: "AI-powered, faster",
         icon: "Sparkles",
-        body: "We use AI tools to research, write and test faster, so changes happen in days, not weeks. [confirm]",
+        body: "We use AI tools to research, write and test faster, so changes happen in days, not weeks.",
       },
       {
         title: "Transparent reporting",

@@ -112,8 +112,8 @@ assessment or WhatsApp. Section order exactly as `docs/design.md` §10.
 
 | # | Section | Bg | Answers | Content | CTA |
 |---|---|---|---|---|---|
-| 1 | Hero: headline, subheading, trust line, "Monthly growth report" card (labelled "Sample report" until real numbers exist) | dark | What + Results | `home.hero`, `site.trustLine` | Both CTAs |
-| 2 | Client strip: "Trusted by 35+ local businesses across 10+ industries", client names marquee | light | Trust | `home.clientStrip`, `industries[].clients` | — |
+| 1 | Hero: headline, subheading, trust line, "Growth report" card with real Vision Plywoods results and a rising-bars chart of average monthly enquiries (DST, Vision Plywoods, Mukilam Academy) | dark | What + Results | `home.hero`, `site.trustLine`, `caseStudies` | Both CTAs |
+| 2 | Client strip: "Trusted by 35+ local businesses across 10+ industries": 4 permitted logos (`clientLogos`) + client names marquee | light | Trust | `home.clientStrip`, `clientLogos`, `industries[].clients` | — |
 | 3 | Services bento: 4 services (Meta Ads large), outcome line, bullets, link | light | What | `services`, `servicesSection` | Link per service |
 | 4 | 4-step journey (pinned on desktop): Get found → Get enquiries → Follow up fast → Build trust | light | What | `home.journey`, `services[].journey` | — |
 | 5 | Results: 2–4 case study cards | light | Results | `caseStudies`, `resultsSection` | "See all results" |
@@ -361,9 +361,9 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 
 | # | Item | Where | Needed by |
 |---|---|---|---|
-| 1 | Case studies: 2–4 clients, challenge, what DIGIFI did, real result figures with periods, screenshots | `caseStudies.ts` | Stage 5 |
-| 2 | Hero report card and sample report numbers (real figures, or stays labelled "Sample report") | `home.ts` | Stage 5 |
-| 3 | Client logo permissions (names only until confirmed) | `industries.ts` | Stage 5 |
+| 1 | Case studies: **figures received** (Vision Plywoods, Mukilam Academy, Dindigul School of TNPSC, JD Leathers). Still needed: "what DIGIFI did" details and the ads dashboard screenshots | `caseStudies.ts` | Stage 6 |
+| 2 | "What your monthly report looks like" section: sample report values (stays labelled "Sample report") | `home.ts` | Stage 5 |
+| 3 | Client logos: **4 received with permission** (JD Leathers, Dindigul School of TNPSC, Mukilam Academy, Vision Plywoods). Others shown as names only. A larger Mukilam Academy logo would be sharper (current file 250px) | `public/clients/` | Stage 5 |
 | 4 | Team members: names, roles, real photos; one line about the team | `about.ts` | Stage 6 |
 | 5 | Portfolio: Vision Plywoods and Wave Power Tech live URLs and screenshots | `services.ts` | Stage 6 |
 | 6 | Custom websites: support period after launch | `services.ts` | Stage 6 |
@@ -379,10 +379,8 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 
 | # | Item | Where |
 |---|---|---|
-| 1 | FAQ: Meta Ads plan terms (lock-in? notice period?). GBP and WhatsApp monthly plans are already "no lock-in" | `faqs.ts` |
 | 4 | FAQ: how clients update their website | `faqs.ts` |
 | 5 | About: founding story details (who founded DIGIFI and why) | `about.ts` |
-| 6 | Why DIGIFI: "changes happen in days, not weeks" (AI-powered turnaround) | `home.ts` |
 | 7 | Website Design page: custom website process and "what's included" list (drafted; plans for GBP, Meta Ads and WhatsApp now come from DIGIFI's sheets) | `services.ts` |
 | 8 | Industry cards: "the challenge" and "how we help" text for each group | `industries.ts` |
 | 9 | Plan copy: the plan features are DIGIFI's sheets rewritten in plain English (e.g. "Hook → Offer → CTA" became "hook, offer, call to action"). Check nothing lost its meaning | `packages.ts` |
@@ -390,5 +388,9 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 Resolved by the service sheets (9 October 2026): minimum ad budget (₹5,000+/month, paid to Meta),
 account ownership ("You own everything"), package prices and contents, Digital Foundation and
 assessment timelines (5–7 business days), "no lock-in" on monthly GBP and WhatsApp plans.
+Resolved by Muthuraja (10 October 2026): case study figures and logo permissions (above); homepage
+headline approved; Meta Ads plans have a 3-month minimum then 1 month's notice; the "AI-powered: changes
+happen in days, not weeks" line is accurate; a red error colour is added to the tokens; JD Leathers added
+to the Retail & Lifestyle clients.
 Resolved by Muthuraja (9 October 2026): service area has no restriction (Dindigul–Madurai–Trichy
 stays the focus in copy and SEO); clients keep their current WhatsApp Business number on the API.

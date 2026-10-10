@@ -60,6 +60,8 @@ const colors = [
   { name: "text-body", hex: "#4A5578", swatch: "bg-body" },
   { name: "text-muted", hex: "#6B7494", swatch: "bg-muted" },
   { name: "text-on-dark", hex: "#A9B4D6", swatch: "bg-on-dark" },
+  { name: "error", hex: "#C62828", swatch: "bg-error" },
+  { name: "error-on-dark", hex: "#FF8A80", swatch: "bg-error-on-dark" },
 ];
 
 const typeStyles = [
