@@ -16,10 +16,10 @@ export const home = {
       sourceNote: "Real client results from the ads dashboard.",
       chart: {
         label: "Average enquiries per month, by client",
+        // Only clients with a true per-month figure. Mukilam Academy's 703 covers 5 weeks.
         caseStudies: [
           "dindigul-school-of-tnpsc-meta-ads",
           "vision-plywoods-meta-ads",
-          "mukilam-academy-meta-ads",
         ],
       },
     },

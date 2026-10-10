@@ -27,6 +27,7 @@ export type CaseStudy = {
   results: CaseStudyResult[];
   /** Average enquiries per month, where the data supports it (homepage chart). */
   monthlyEnquiries?: number;
+  /** Cropped Meta Ads Manager row (campaign, results, cost per result); no spend or other clients. */
   screenshot: string | null;
   screenshotAlt: string;
 };
@@ -54,8 +55,9 @@ export const caseStudies: CaseStudy[] = [
       { label: "Cost per lead", value: 7.9, prefix: "₹", decimals: 2 },
     ],
     monthlyEnquiries: 323,
-    screenshot: null, // [TBD: ads dashboard screenshot from DIGIFI]
-    screenshotAlt: "Meta Ads dashboard for Vision Plywoods",
+    screenshot: "/case-studies/vision-plywoods-meta-ads.png",
+    screenshotAlt:
+      "Meta Ads Manager: Vision Plywood Engagement campaign, 1,942 messaging conversations at ₹7.90 per result",
   },
   {
     slug: "mukilam-academy-meta-ads",
@@ -64,7 +66,7 @@ export const caseStudies: CaseStudy[] = [
     industry: "education-coaching",
     trade: "Coaching academy",
     services: ["meta-ads"],
-    period: "May 2025",
+    period: "24 Apr–31 May 2025",
     challenge: "Not enough enquiries for their courses.",
     whatWeDid: [
       "Got to know the academy and its students: their goals, their worries and why they put off enrolling.",
@@ -72,12 +74,12 @@ export const caseStudies: CaseStudy[] = [
       "Tracked how every ad performed and improved the campaign based on what the data showed.",
     ],
     results: [
-      { label: "Enquiries", value: 703, context: "in one month" },
+      { label: "Enquiries", value: 703, context: "in 5 weeks" },
       { label: "Cost per lead", value: 9.16, prefix: "₹", decimals: 2 },
     ],
-    monthlyEnquiries: 703,
-    screenshot: null, // [TBD: ads dashboard screenshot from DIGIFI]
-    screenshotAlt: "Meta Ads dashboard for Mukilam Academy",
+    screenshot: "/case-studies/mukilam-academy-meta-ads.png",
+    screenshotAlt:
+      "Meta Ads Manager: Mukilam Academy campaign, 703 messaging conversations at ₹9.16 per result",
   },
   {
     slug: "dindigul-school-of-tnpsc-meta-ads",
@@ -119,8 +121,9 @@ export const caseStudies: CaseStudy[] = [
       { label: "Enquiries", value: 335, context: "in 20 days" },
       { label: "Cost per lead", value: 5.57, prefix: "₹", decimals: 2 },
     ],
-    screenshot: null, // [TBD: ads dashboard screenshot from DIGIFI]
-    screenshotAlt: "Meta Ads dashboard for JD Leathers",
+    screenshot: "/case-studies/jd-leathers-meta-ads.png",
+    screenshotAlt:
+      "Meta Ads Manager: JD Leathers Clearance Sale 2025 campaign, 335 messaging conversations at ₹5.57 per result",
   },
 ];
 
@@ -139,6 +142,8 @@ export const resultsSection = {
   eyebrow: "Results",
   heading: "Real results for local businesses",
   intro: "Numbers from our clients' ad dashboards. No made-up figures, ever.",
+  enquiryNote:
+    'An enquiry here is a customer starting a chat with the business from the ad ("messaging conversations" in Meta Ads Manager).',
   linkLabel: "See all results",
   costPerLeadNote:
     "Cost per lead is the ad spend divided by the number of enquiries.",

@@ -361,7 +361,7 @@ confirmed. Search the code for `[TBD` and `[confirm` to find them.
 
 | # | Item | Where | Needed by |
 |---|---|---|---|
-| 1 | Case studies: **figures received** (Vision Plywoods, Mukilam Academy, Dindigul School of TNPSC, JD Leathers). "What DIGIFI did" written from Muthuraja's process description. Still needed: the ads dashboard screenshots | `caseStudies.ts` | Stage 6 |
+| 1 | Case studies: **figures received** (Vision Plywoods, Mukilam Academy, Dindigul School of TNPSC, JD Leathers). "What DIGIFI did" written from Muthuraja's process description. Screenshots received and cropped (campaign, results, cost per result only) for Vision Plywoods, Mukilam Academy and JD Leathers. Still needed: Dindigul School of TNPSC screenshot; confirm Mukilam Academy period (screenshot shows 24 Apr–31 May 2025, not May only) | `caseStudies.ts` | Stage 6 |
 | 2 | "What your monthly report looks like" section: sample report values (stays labelled "Sample report") | `home.ts` | Stage 5 |
 | 3 | Client logos: **4 received with permission** (JD Leathers, Dindigul School of TNPSC, Mukilam Academy, Vision Plywoods). Others shown as names only. A larger Mukilam Academy logo would be sharper (current file 250px) | `public/clients/` | Stage 5 |
 | 4 | Team members: names, roles, real photos; one line about the team | `about.ts` | Stage 6 |

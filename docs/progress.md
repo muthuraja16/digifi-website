@@ -99,3 +99,4 @@
 - Logos with permission in `public/clients/` (Vision Plywoods trimmed of white space). JD Leathers added to Retail & Lifestyle.
 - Headline approved. Meta Ads terms: 3-month minimum, then 1 month's notice (FAQ + plan cards). AI-turnaround line confirmed. Error colour tokens added: `error` #C62828, `error-on-dark` #FF8A80.
 - "What DIGIFI did" written for all four from Muthuraja's process description (research → creatives on pain points → data-led improvement). Still to come: ads dashboard screenshots.
+- Screenshots (10 Oct): Vision Plywoods, Mukilam Academy, JD Leathers cropped to campaign/results/cost-per-result rows in `public/case-studies/` (removed other campaigns, another client "Olympic Traders", budgets and spend). Results are Meta "messaging conversations"; noted on the site. Mukilam period corrected to 24 Apr–31 May 2025 per the screenshot. DST screenshot still to come.
